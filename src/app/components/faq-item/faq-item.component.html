@@ -1,0 +1,5 @@
+<div (click)="toggleAnswer()" class="faq-item" [ngClass]="{'show': showAnswer}">
+    <h3>{{question}}</h3>
+    <div ></div>
+    <p [innerHTML]="answer"></p>
+</div>

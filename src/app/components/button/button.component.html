@@ -1,0 +1,38 @@
+@if(isLink()){
+    <a
+        class="btn {{class}}"
+        [ngClass]="{'btn-tertiary': isTertiary(),'btn-secondary': isSecondary(), 'rounded': rounded,
+        'disabled': disabled}"
+        [routerLink]="link"
+        (click)="goToTop()"
+    >
+    @if (isIcon()) {
+        <i class="{{icon}} {{iconClass}}"></i>
+    }
+    @if (isSvgImage()) {
+        <img class="{{iconClass}}" src="{{svgIcon}}" alt="{{text}}">
+    }
+        {{ text }}
+    </a>
+}@else{
+    <button *ngIf="!isLink()"
+        class="btn {{class}}"
+        [ngClass]="{
+            'btn-tertiary': isTertiary(),
+            'btn-secondary': isSecondary(),
+            'rounded': rounded,
+            'disabled': disabled
+        }"
+        type="{{buttonType()}}"
+    >
+        @if (isIcon()) {
+            <i class="{{icon}} {{iconClass}}"
+                [ngClass]="{'margin-right': hasText()}"
+            ></i>
+        }
+        @if (isSvgImage()) {
+            <img class="{{iconClass}}" src="{{svgIcon}}" alt="{{text}}">
+        }
+        {{text}}
+    </button>
+}
