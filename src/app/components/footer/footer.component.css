@@ -1,25 +1,17 @@
 footer{
     width: 100%;
-    min-height: 90vh;
-    background-color: var(--tertiary-color-darker);
+    min-height: 60vh;
+    background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 5% 5%;
+    padding: 5% 10%;
     gap: 2rem;
 }
 footer > img{
     width: 45%;
     object-fit: contain;
-}
-
-
-footer h2{
-    padding-bottom: 2%;
-    color: var(--light-color);
-    font-size: 2.5rem;
-    font-weight: 600;
 }
 
 footer section,
@@ -32,198 +24,121 @@ footer section ul{
 
 footer section ul{
     gap:1rem;
-    flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    width: 100%;
-
-}
-
-footer > section > ul{
-    gap: 2rem;
 }
 
 footer section ul li{
     list-style: none;
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-}
-footer section > ul > li > ul{
-    align-items: flex-start;
-}
-footer section > ul > li{
-    align-items: flex-start;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 footer section ul li a{
-    font-weight: 400;
-    font-size: 1.3rem;
+    font-weight: 600;
+    font-size: 1.5rem;
     color:var(--light-color);
 }
 
-footer .footer-secondary:last-child{
-
+footer .footer-secondary{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    gap: 5rem;
+}
 
-}
-footer .footer-secondary:last-child h2{
-    width: 100%;
-    font-size: 1.3rem;
-    text-align: end;
-}
-footer .footer-secondary:last-child > img{
-    width: 20%;
+footer .footer-secondary > img{
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-footer .footer-secondary:last-child div{
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-footer .footer-secondary:last-child div img{
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-footer section ul .social-icons{
+
+footer section ul.social-icons{
     flex-direction: row;
+    justify-content: space-evenly;
     gap: 1rem;
 }
 
-.footer-contact .social-icon {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+.footer-secondary .social-icons li {
+    background-color: var(--tertiary-color);
+    border-color: var(--tertiary-color);
+    border-radius: 50rem;
 }
 
-.footer-contact .social-icon:hover{
-    background-color: var(--tertiary-color-darker);
+.footer-secondary .social-icons li:hover{
+    background-color: var(--primary-color);
+    border-color: var(--tertiary-color);
 }
-
-.footer-contact .social-icon i{
-    color: var(--tertiary-color-darker);
+.footer-secondary .social-icon i{
+    color: var(--primary-color);
 }
-
-.footer-contact .social-icon:hover i{
-    color: var(--secondary-color);
-
+.footer-secondary .social-icon:hover i{
+    color: var(--tertiary-color);
 }
 
 
 
 @media (min-width: 530px) {
-    footer{
-        padding: 5% 5%;
-        height: 85vh;
-    }
     footer > img{
-        width: 30%;
-    }
-    footer section > ul{
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    footer section > ul > li{
-        width: auto;
-    }
-    footer h2{
-        font-size: 2.3rem;
-    }
-    footer section ul li a{
-        font-size: 1.8rem;
-    }
-    footer .footer-secondary:last-child > img{
         width: 20%;
     }
-    footer .footer-secondary:last-child div{
-        gap: 2rem;
+    footer section ul li a{
+        font-size: 2rem;
     }
-    footer .footer-secondary:last-child div img{
-        width: 30%;
+    footer .footer-secondary > img{
+        width: 15%;
     }
 
-    footer .footer-secondary:last-child h2{
-        font-size: 1.5rem;
-    }
 
 }
 
 
 @media (min-width: 950px) {
     footer{
-        padding: 5% 3%;
-        height: auto;
-        min-height: 40vh;
         flex-direction: row;
+        justify-content: space-between;
         align-items: stretch;
         flex-wrap: wrap;
-        justify-content: space-between;
+        padding: 2% 5%;
+        /* gap:0; */
+        min-height: 40vh;
     }
     footer > img{
-        width: 25%;
+        width: 15%;
     }
-    footer section:nth-child(2){
-        width: 60%;
+    footer section.footer-primary{
+        width: 80%;
+        align-items: flex-end;
     }
-    footer h2{
-        font-size: 2rem;
+    footer section.footer-primary ul{
+        justify-content: flex-end;
+        /* align-items: flex-end; */
+        gap: 3rem;
     }
-    footer section ul li a{
-        font-size: 1.5rem;
+    footer section.footer-primary ul li{
+        align-items: flex-end;
     }
-
-    footer .footer-secondary:last-child > img{
-        width: 10%;
+    footer section.footer-secondary{
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-end;
     }
-    footer .footer-secondary:last-child div{
+    footer section.footer-secondary .social-icons{
         gap: 2rem;
+        order: 1;
+        justify-content: flex-end;
+        align-items: flex-start;
     }
-    footer .footer-secondary:last-child div img{
-        width: 20%;
-    }
-
-    footer .footer-secondary:last-child h2{
-        font-size: 1.7rem;
+    footer section.footer-secondary >img{
+        width: 7%;
     }
 }
 
 @media (min-width: 1100px) {
-    footer{
-        padding: 3% 2%;
-        min-height: 50vh;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    footer > img{
-        width: 20%;
-    }
-    footer h2{
-        font-size: 2.7rem;
-    }
-    footer section ul li a{
-        font-size: 2rem;
-    }
 
-    footer .footer-secondary:last-child > img{
-        width: 6%;
-    }
-    footer .footer-secondary:last-child div{
-        gap: 5rem;
-    }
-    footer .footer-secondary:last-child div img{
-        width: 10%;
-    }
-
-    footer .footer-secondary:last-child h2{
-        font-size: 2rem;
-    }
 }
