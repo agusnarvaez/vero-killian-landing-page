@@ -7,8 +7,9 @@
     </div>
     <nav [ngClass]="showHeader ? 'show' : ''">
         <ul>
-            <li (click)="toggleHeader()" ><a [routerLink]="['']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Inicio</a></li>
-            <li (click)="toggleHeader()" ><a [routerLink]="['como-trabajamos']" [routerLinkActive]="['active']">Cómo trabajamos</a></li>
+            <li (click)="toggleHeader()" ><a [routerLink]="['']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+            <li (click)="toggleHeader()" ><a [routerLink]="['catalogo']" [routerLinkActive]="['active']">Comprar</a></li>
+            <li (click)="toggleHeader()" ><a [routerLink]="['vender']" [routerLinkActive]="['active']">Vender</a></li>
             <li (click)="toggleHeader()" ><a [routerLink]="['contacto']" [routerLinkActive]="['active']">Contacto</a></li>
         </ul>
     </nav>
