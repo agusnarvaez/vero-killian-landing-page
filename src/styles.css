@@ -1,16 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --primary-color: #B80E3B;
-    --secondary-color: #FFFFF0;
-    --tertiary-color: #9D9480;
-    --tertiary-color-darker: #9D9480;
+    --primary-color: #475838;
+    --secondary-color: #E6C7B9B2;
+    --tertiary-color: #D9D9D9;
+    --primary-color-lighter: #7F8259;
     --dark-button-color: #212427;
     --danger-color: #ff0000;
     --success-color: #00ff00;
     --warning-color: #ffff00;
     --info-color: #0000ff;
     --dark-color: #333;
-    --light-color: #FFFFF0;
+    --light-color: #F5F5F5;
     --primary-font: 'Montserrat', sans-serif;
     --secondary-font: 'Raleway', sans-serif;
     --primary-font-size: 1.6rem;
@@ -55,7 +55,7 @@ body{
 main{
     min-height: 80vh;
     position: relative;
-    background-color: var(--secondary-color);
+    background-color: var(--light-color);
     display: flex;
     align-items: stretch;
     flex-direction: column;
@@ -155,7 +155,7 @@ a:hover{
 /* Estilos específicos para el modo oscuro */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: var(--secondary-color);
+        background-color: var(--lighter-color);
     }
 
     /* Puedes necesitar agregar más estilos específicos para el modo oscuro */
