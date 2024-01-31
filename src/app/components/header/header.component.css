@@ -32,7 +32,11 @@ header .header-button{
     width: 40px;
     height: 30px;
     position: relative;
-
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+header .header-button:hover{
+    transform: scale(1.1);
 }
 
 header .header-button div,
