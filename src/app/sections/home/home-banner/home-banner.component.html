@@ -1,12 +1,12 @@
 <section class="banner">
-    <header>
-        <img class="banner-slogan-mobile" src="../../../../assets/backgrounds/home-filter-banner.png" alt="Banner" />
-        <img class="banner-slogan-desktop" src="../../../../assets/backgrounds/home-filter-banner_desktop.png" alt="Banner" />
-        <section>
-            <app-button text="Comprar" class="main-filter-btn" [type]="isSellFilterActive ? '' : 'secondary'" (click)="toggleFilter({name: 'operation_type', value:'Venta'}); searchProducts()"></app-button>
-            <app-button text="Vender" class="main-filter-btn" type="secondary" link="/vender"></app-button>
-            <app-button text="Alquilar" class="main-filter-btn" [type]="isRentFilterActive ? '' : 'secondary'" (click)="toggleFilter({name: 'operation_type', value:'Alquiler'}); searchProducts()"></app-button>
-        </section>
-    </header>
-    <img src="../../../assets/backgrounds/home-banner.jpg" alt="Banner" />
+    <article>
+        <img src="assets/backgrounds/banner-buy.jpeg" alt="banner" />
+        <h2>¿Querés comprar una propiedad?</h2>
+        <a [routerLink]="['/catalogo']">Comprar</a>
+    </article>
+    <article>
+        <img src="assets/backgrounds/banner-sell.jpeg" alt="banner" />
+        <h2>¿Querés vender una propiedad?</h2>
+        <a [routerLink]="['/vender']">Vender</a>
+    </article>
 </section>

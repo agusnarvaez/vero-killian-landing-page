@@ -1,113 +1,114 @@
 .banner{
-    position: relative;
-    height: 40vh;
+    padding: 5% 3% 5% 3%;
     flex-direction: column;
-    padding: 20% 3% 5% 3%;
+    gap: 2rem;
 }
-
-.banner > img{
-    border-radius: 1rem;
+.banner article{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: bottom;
-    /* position: absolute; */
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+    border-radius: 2rem;
+    height: 35vh;
+    overflow: hidden;
+    padding: 5%;
+    gap: 1rem;
 }
-.banner header{
-    position: absolute;
-    top: 0;
-    height: 20vh;
-    width: 90%;
-    padding: 2% 0;
-    left: 50%;
-    transform: translate(-50%, 20%);
-    z-index: 50;
-    color: var(--light-color);
-    text-align: center;
-    display: flex;
-    border-radius: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    background: rgba(255, 255, 255, 0.10);
-    box-shadow: 0px 24px 30px 0px rgba(0, 0, 0, 0.05), 0px 1px 1px 1px rgba(255, 255, 255, 0.25) inset, 0px -1px 1px 1px rgba(255, 255, 255, 0.08) inset;
-    backdrop-filter: blur(50px);
+.banner article:last-child {
+    align-items: flex-end;
 }
-.banner header img{
-    width: 95%;
-    object-fit: contain;
+.banner article:last-child h2{
+    text-align: right;
 }
-.banner-slogan-desktop{
-    display: none;
-}
-.banner header section{
-    justify-content: space-around;
-}
-.main-filter-btn {
-    width: 30%;
-}
-.search-btn{
-    width: 15%;
-}
-/* .banner header section{
-    hei
-} */
-/* .banner header::after{
-    content: "";
+.banner article::after{
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 20vh;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.20);
+    z-index: 5;
 
+}
+
+.banner article img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.banner article h2{
     z-index: 10;
-} */
+    color: var(--light-color);
+    font-weight: 600;
+    width: 80%;
+    font-size: 2rem;
+}
 
-
+.banner article a{
+    z-index: 10;
+    color: var(--primary-color);
+    background-color: var(--light-color);
+    border: 1px solid var(--light-color);
+    padding: 1rem 2rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
 
 @media (min-width: 530px) {
     .banner{
-        height: 60vh;
-        padding: 10% 3% 5% 3%;
+        flex-direction: row;
+        gap: 0;
+        padding: 3%;
+        justify-content: space-between;
     }
-
-    .banner header{
-        height: 30vh;
-        padding: 2% 3%;
-        transform: translate(-50%, 15%);
+    .banner article{
+        width: 49%;
+        height: 40vh;
+        padding: 3%;
+    }
+    .banner article h2{
+        font-size: 2.5rem;
+    }
+    .banner article a{
+        font-size: 2rem;
     }
 }
 
 @media (min-width: 950px) {
-    .banner{
-        height: 90vh;
-        padding: 3% 3% 3% 3%;
+    .banner article{
+        height: 50vh;
+        gap: 2rem;
+    }
+    .banner article h2{
+        font-size: 3rem;
+    }
+    .banner article a:hover{
+        background-color: var(--primary-color);
+        color: var(--light-color);
+    }
+    .banner article a:active{
+        transform: scale(0.95);
     }
 
-    .banner header{
-        transform: translate(-50%, 40%);
-        justify-content: space-between;
-        min-height: 20vh;
-        max-height: 20vh;
-        border-radius: 2rem;
-        padding: 0% 2%;
-    }
+}
 
-    .banner header img{
-        width: 35%;
+@media (min-width: 1110px) {
+    .banner article h2{
+        font-size: 3.5rem;
     }
-
-    .banner header section{
-        width: 60%;
+    .banner article{
+        height: 60vh;
     }
-    .banner-slogan-mobile{
-        display: none;
-    }
-    .banner-slogan-desktop{
-        display: block;
-    }
-
 }
