@@ -6,6 +6,7 @@ import { HomeReviewsComponent } from '../../sections/home/home-reviews/home-revi
 import { HomeContactComponent } from '../../sections/home/home-contact/home-contact.component'
 import { HomeIdentityComponent } from '../../sections/home/home-identity/home-identity.component'
 import { HomeWorkComponent } from '../../sections/home/home-work/home-work.component'
+import { HomeAdvicesComponent } from '../../sections/home/home-advices/home-advices.component'
 
 
 @Component({
@@ -18,6 +19,7 @@ import { HomeWorkComponent } from '../../sections/home/home-work/home-work.compo
     HomeFaqComponent,
     HomeContactComponent,
     HomeIdentityComponent,
+    HomeAdvicesComponent,
     HomeWorkComponent
   ],
   templateUrl: './home.component.html',

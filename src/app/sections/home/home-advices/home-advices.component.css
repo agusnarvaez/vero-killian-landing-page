@@ -1,0 +1,115 @@
+.home-advices{
+    padding: 3%;
+    gap: 1rem;
+    justify-content: space-between;
+}
+.home-advices h2{
+    width: 100%;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.home-advices article{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    perspective: 1000px; /* Crea la perspectiva 3D */
+    color: var(--light-color);
+}
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    cursor: pointer;
+}
+.home-advices article .flipped.card-inner {
+    transform: rotateY(180deg); /* Gira la tarjeta al pasar el mouse */
+}
+.home-advices article .card-front::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(71, 88, 56, 0.50);
+    z-index: 1;
+}
+
+.home-advices article .card-front,
+.home-advices article .card-back{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 5%;
+    overflow: hidden;
+    position: relative;
+    backface-visibility: hidden;
+}
+.home-advices article h3,
+.home-advices article p{
+    z-index: 2;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.home-advices article p{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.home-advices article .card-front img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+.home-advices article .card-back{
+    position: absolute;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    top:0;
+    transform: rotateY(180deg);
+    background-color: var(--primary-color);
+
+}
+.home-advices article .card-back ul li{
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.home-advices article .card-back .btn-double a{
+    color: var(--primary-color);
+    background-color: var(--light-color);
+    border-color: var(--light-color);
+}
+
+.home-advices article .card-back .btn-double a svg path{
+    fill: var(--primary-color);
+}
+
+.home-advices article .card-back .btn-double a:hover{
+    color: var(--light-color);
+    background-color: var(--primary-color);
+}
+
+.home-advices article .card-back .btn-double a:hover svg path{
+    fill: var(--light-color);
+}
+
+
+@media (min-width: 530px) {
+    .home-advices{
+
+    }
+    .home-advices article{
+        width: 48%;
+    }
+
+}
