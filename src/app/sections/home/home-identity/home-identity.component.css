@@ -104,7 +104,7 @@
 
 @media (min-width: 950px) {
     .home-identity{
-        min-height: 60vh;
+        min-height: 65vh;
     }
     .home-identity .info h2{
         font-size: 3rem;
@@ -119,6 +119,6 @@
 
 @media (min-width: 1110px) {
     .home-identity{
-        min-height: 65vh;
+        min-height: 80vh;
     }
 }
