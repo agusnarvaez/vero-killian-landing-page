@@ -134,6 +134,35 @@ a:hover{
     position: relative;
 }
 
+.btn-double{
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+}
+.btn-double a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 20rem;
+    padding: 5% 15%;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.btn-double a:last-child {
+    aspect-ratio: 1/1;
+    /* width: 3.5rem;
+    height: 3.5rem; */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
 .separator h2{
     color: var(--tertiary-color-darker);
     background-color: var(--secondary-color);
@@ -159,6 +188,33 @@ a:hover{
     }
 
     /* Puedes necesitar agregar más estilos específicos para el modo oscuro */
+}
+.social-icon{
+    background-color: var(--tertiary-color-darker);
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--tertiary-color-darker);
+    transition: all 0.3s ease-in-out;
+}
+
+.social-icon:hover{
+    transform: scale(1.1);
+    text-decoration: none;
+    background-color: 1px solid var(--light-color);
+}
+
+.social-icon i{
+    font-size: 2rem;
+    color: var(--light-color);
+    transition: all 0.3s ease-in-out;
+}
+.social-icon:hover i{
+    color: var(--tertiary-color-darker);
 }
 
 
@@ -209,34 +265,19 @@ a:hover{
         line-height: 2rem;
     }
 
-}
-.social-icon{
-    background-color: var(--tertiary-color-darker);
-    width: 50px;
-    height: 50px;
-    aspect-ratio: 1/1;
-    border-radius: 50rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--tertiary-color-darker);
-    transition: all 0.3s ease-in-out;
+    .btn-double a:hover{
+        background-color: var(--light-color);
+        color: var(--primary-color);
+    }
+
+    .btn-double a:hover svg path{
+        fill: var(--primary-color);
+    }
+    .btn-double a:active{
+        transform: scale(0.9);
+    }
 }
 
-.social-icon:hover{
-    transform: scale(1.1);
-    text-decoration: none;
-    background-color: 1px solid var(--light-color);
-}
-
-.social-icon i{
-    font-size: 2rem;
-    color: var(--light-color);
-    transition: all 0.3s ease-in-out;
-}
-.social-icon:hover i{
-    color: var(--tertiary-color-darker);
-}
 
 @media (min-width: 950px) {
 
@@ -257,6 +298,9 @@ a:hover{
     .separator h2{
         font-size: 2rem;
         line-height: 2.5rem;
+    }
+    .btn-double a{
+        padding: 5% 15%;
     }
 }
 
