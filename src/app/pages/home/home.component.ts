@@ -5,6 +5,7 @@ import { HomeFaqComponent } from '../../sections/home/home-faq/home-faq.componen
 import { HomeStudioComponent } from '../../sections/home/home-studio/home-studio.component'
 import { HomeReviewsComponent } from '../../sections/home/home-reviews/home-reviews.component'
 import { HomeContactComponent } from '../../sections/home/home-contact/home-contact.component'
+import { HomeIdentityComponent } from '../../sections/home/home-identity/home-identity.component'
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ import { HomeContactComponent } from '../../sections/home/home-contact/home-cont
     HomeStudioComponent,
     HomeReviewsComponent,
     HomeFaqComponent,
-    HomeContactComponent
+    HomeContactComponent,
+    HomeIdentityComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
