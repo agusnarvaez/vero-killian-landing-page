@@ -1,21 +1,35 @@
 <section>
-    @for (item of reviews; track $index) {
-        <div class="review-container" [ngClass]="{'review-container_right':isOdd($index)}">
-            <div class="review-header">
-                <span class="review-author">{{item.author}}</span>
-                <div class="review-stars">
-                    <!-- Aquí puedes insertar imágenes de estrellas o usar algún tipo de icono de una librería como FontAwesome -->
-                    @for(star of this.makeArray(item.stars); track $index){
-                        ★
-                    }
-                </div>
-            </div>
-            <div class="review-body">
-                <p>{{item.content}}</p>
-            </div>
+    <h2>
+        ¿Qué piensan nuestros clientes de nosotros?
+    </h2>
+    <div class="carousel-container">
+        <div
+            class="carousel-inner"
 
-            <div class="review-source">Review de Google</div>
+            [style.transform]="carouselPosition()"
+            >
+            @for (item of reviews; track $index) {
+                <article class="review-container">
+                    <p>
+                        {{item.content}}
+                    </p>
+                    <footer>
+                        <img src="{{item.avatar}}" alt="{{item.author}}">
+                        <div>
+                            <h3>
+                                {{item.author}}
+                            </h3>
+                            <p>
+                                Opiniones de Google
+                            </p>
+                        </div>
+                    </footer>
+                </article>
+            }
         </div>
-    }
-
+    </div>
+    <div class="carousel-controls">
+        <i class="fas fa-chevron-left" [ngClass]="{'unactive':isFirstPosition()}" (click)="previousCard()"></i>
+        <i class="fas fa-chevron-right" [ngClass]="{'unactive':isLastPosition()}" (click)="nextCard()"></i>
+    </div>
 </section>

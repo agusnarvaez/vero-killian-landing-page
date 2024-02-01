@@ -4,127 +4,171 @@ section{
     align-items: flex-start;
     gap: 2rem;
 }
-    .review-container {
-        width: 90%;
-        border: 1px solid var(--tertiary-color-darker);
-        border-radius: 0.5rem;
-        padding: 1.5rem;
-        position: relative;
-    }
-    .review-container_right{
-        align-self: flex-end;
-    }
-    .review-container::after {
-        content: '';
-        position: absolute;
-        bottom: -20px; /* Ajusta esta posición como necesites */
-        left: 5%; /* Ajusta para mover la cola izquierda-derecha */
-        border-width: 10px;
-        border-radius: 5px;
-        border-style: solid;
-        border-color: var(--tertiary-color-darker) transparent transparent transparent;
-        /* Esto crea la 'cola': un triángulo con el borde inferior del mismo color que el cuadro de diálogo */
-    }
+section h2{
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 3.5rem;
+    color: var(--primary-color);
+}
+.carousel-container{
+    display: flex;
+    align-items: stretch;
+}
+.carousel-inner{
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+.review-container {
+    width: 85vw;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.review-container > p{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+.review-container footer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.review-container footer img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.review-container footer h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.review-container footer p{
+    font-size: 1.3rem;
+    font-weight: 300;
+}
 
-    .review-container::before {
-        content: '';
-        position: absolute;
-        bottom: -19px; /* Ajusta esta posición como necesites */
-        left: 5%; /* Ajusta para mover la cola izquierda-derecha */
-        border-width: 10px;
-        z-index: 50;
-        border-style: solid;
-        border-color: var(--secondary-color) transparent transparent transparent;
-        /* Esto crea la 'cola': un triángulo con el borde inferior del mismo color que el cuadro de diálogo */
-    }
+.carousel-controls{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+.carousel-controls i{
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+    border-radius: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.carousel-controls i.unactive{
+    background-color: var(--unactive-color);
+}
 
-    .review-container_right::before,
-    .review-container_right::after{
-        left: auto;
-        right: 5%;
-    }
 
-    .review-header {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-    .review-container_right .review-header{
-        flex-direction: row-reverse;
-    }
-
-    .review-author {
-        font-weight: bold;
-        font-size: 1.4rem;
-        display: flex;
-        align-items: center;
-        color: var(--tertiary-color-darker);
-    }
-
-    .review-stars {
-        display: flex;
-        align-items: center;
-        color: var(--primary-color); /* Color amarillo de las estrellas */
-        font-size: 1.5rem; /* Ajusta el tamaño de las estrellas */
-    }
-
-    .review-body p {
-        font-size: 0.9rem;
-        padding: 1rem 0;
-        color: var(--dark-color);
-    }
-
-    .review-footer {
-        font-size: 0.8rem;
-        color: #777;
-        margin-bottom: 5px;
-    }
-
-    .review-source {
-        font-size: 0.7rem;
-        text-align: left;
-        color: #999;
-    }
-    .review-container_right .review-source{
-        text-align: right;
-    }
 
     @media (min-width: 530px) {
+        section h2{
+            width: 80%;
+            font-size: 3.5rem;
+            line-height: 4rem;
+        }
+        .carousel-inner{
+            gap: 1.3rem;
+        }
         .review-container {
-            width: 70%;
+            width: 35vw;
+            border-radius: 1.5rem;
         }
-        .review-author {
-            font-size: 1.6rem;
+        .review-container > p{
+            font-size: 1.7rem;
+            line-height: 2.3rem;
         }
-        .review-stars {
+        .review-container footer img{
+            width: 55px;
+            height: 55px;
+        }
+        .review-container footer h3{
             font-size: 1.7rem;
         }
-        .review-body p {
-            font-size: 1.3rem;
+        .review-container footer p{
+            font-size: 1.5rem;
         }
-        .review-source {
-            font-size: 1rem;
+        .carousel-controls i:hover{
+            background-color: var(--unactive-color);
+        }
+        .carousel-controls i:active{
+            transform: scale(0.9);
         }
     }
 
     @media (min-width: 950px) {
-        .review-container {
+        section h2{
             width: 60%;
+            font-size: 4rem;
+            line-height: 4.5rem;
         }
-
-        .review-author {
+        .carousel-inner{
+            gap: 1.5rem;
+        }
+        .review-container {
+            border-radius: 2rem;
+        }
+        .review-container > p{
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+        .review-container footer img{
+            width: 65px;
+            height: 65px;
+        }
+        .review-container footer h3{
             font-size: 2rem;
         }
-        .review-stars {
-            font-size: 2rem;
-        }
-        .review-body p {
-            font-size: 1.6rem;
-        }
-        .review-source {
-            font-size: 1.1rem;
+        .review-container footer p{
+            font-size: 1.7rem;
         }
 
+    }
+    @media (min-width: 1100px) {
+        section h2{
+            width: 50%;
+            font-size: 4.5rem;
+            line-height: 5rem;
+        }
+        .carousel-inner{
+            gap: 2rem;
+        }
+        .review-container > p{
+            font-size: 2.3rem;
+            line-height: 2.8rem;
+        }
+        .review-container footer img{
+            width: 75px;
+            height: 75px;
+        }
+        .review-container footer h3{
+            font-size: 2.3rem;
+        }
+        .review-container footer p{
+            font-size: 2rem;
+        }
     }
 
 
