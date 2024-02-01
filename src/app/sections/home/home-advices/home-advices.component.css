@@ -28,6 +28,9 @@
 .home-advices article .flipped.card-inner {
     transform: rotateY(180deg); /* Gira la tarjeta al pasar el mouse */
 }
+.home-advices article .flipped.card-inner .card-front{
+    opacity: 0;
+}
 .home-advices article .card-front::after{
     content: '';
     position: absolute;
@@ -51,6 +54,7 @@
     overflow: hidden;
     position: relative;
     backface-visibility: hidden;
+    transition: all 0.3s ease-in-out;
 }
 .home-advices article h3,
 .home-advices article p{
