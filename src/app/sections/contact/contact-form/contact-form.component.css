@@ -5,7 +5,6 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    padding: 5% 3%;
     gap: 2.3rem;
 }
 
@@ -54,8 +53,10 @@ form .input-container input:focus-within{
 }
 
 form .input-container:focus-within label{
-    font-weight: 600;
     color: #000;
+}
+form .btn-double{
+    justify-content: flex-end;
 }
 
 @media (min-width: 530px) {
@@ -64,6 +65,9 @@ form .input-container:focus-within label{
         padding: 0;
         order: 1;
         height: 100%;
+        gap: 1rem;
+        justify-content: flex-start;
+        height: fit-content;
     }
 
     form .input-container textarea,
@@ -74,12 +78,17 @@ form .input-container:focus-within label{
 
     form .input-container label{
         font-size: 1.5rem;
-        font-weight: 600;
     }
 }
 
 
 @media (min-width: 950px) {
+    form{
+        gap: 2rem;
+    }
+    form .btn-double{
+        height: 9rem;
+    }
 
     form .input-container textarea,
     form .input-container select,
@@ -90,7 +99,6 @@ form .input-container:focus-within label{
 
     form .input-container label{
         font-size: 2rem;
-        font-weight: 600;
     }
 
 
