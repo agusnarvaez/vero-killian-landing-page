@@ -1,21 +1,21 @@
-
-.contact-title{
+main .contact-slogan{
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5% 3% 5% 3%;
-}
-.contact-slogan{
-    width: 100%;
-    display: flex;
-    object-fit: contain;
+    object-fit: cover;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 0 5% 0;
-
+}
+main section{
+    padding: 5%;
+}
+main section h1{
+    width: 100%;
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 600;
+    color: var(--primary-color);
 }
 
 .contact-title p{
@@ -38,99 +38,55 @@ app-contact-form{
 
 }
 
-.contact-socials{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 5% 3%;
-    gap: 2.3rem;
-}
-.contact-socials li h3,
-.contact-socials li{
-    width: 100%;
-    display: flex;
-    align-items: stretch;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-.contact-socials li h3{
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--primary-color);
-}
-.contact-socials li a{
-    color: var(--dark-color);
-    font-size: 1.3rem;
-}
-.contact-socials li a:hover{
-    color: var(--primary-color);
-}
-.contact-socials li:last-child{
-    gap: 2rem;
-}
 
 
 @media (min-width: 530px) {
 
     main{
-        height: 95vh;
+        min-height: 50vh;
         display: flex;
-        flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
+        flex-direction: row;
         flex-wrap: wrap;
-        padding: 0 3%;
+        padding: 5% 3%;
+        gap: 1rem;
+    }
+    main .contact-slogan,
+    main section{
+        width: 49%;
+    }
+    main section{
+        padding: 0% 0%;
+    }
+    main .contact-slogan{
+        border-top-left-radius: 20rem;
+        padding: 0 5% 0 0;
+        object-position: right;
+    }
+    main section h1{
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+        text-align: end;
+        font-weight: 500;
     }
 
-    .contact-title{
-        padding: 0;
-        width: 45%;
-        height: 45%;
-    }
     app-contact-form{
         order: 1;
-        width: 45%;
+        width: 100%;
         height: 100%;
-    }
-    .contact-socials{
-        padding: 0;
-        height: 45%;
-        width: 45%;
-    }
-
-    .contact-socials li h3{
-        font-size: 2.5rem;
-        font-weight: 600;
-    }
-    .contact-socials li a{
-        font-size: 1.5rem;
     }
 }
 
 @media (min-width: 950px) {
-    .contact-title{
-        align-items: start;
-    }
-    .contact-slogan{
-        width: 70%;
-    }
-    .contact-title p{
-        font-size: 2rem;
-    }
-
-    .contact-socials li h3{
-        font-size: 2.5rem;
-        font-weight: 600;
-    }
-    .contact-socials li a{
-        font-size: 2rem;
+    main section h1{
+        font-size: 3rem;
+        line-height: 4rem;
     }
 }
 
 @media (min-width: 1150px) {
     main{
-        height: 90vh;
+        min-height: 90vh;
     }
 }
