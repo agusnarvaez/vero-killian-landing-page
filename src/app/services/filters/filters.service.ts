@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core'
 
 export interface Filters{
-  [key:string]:string | boolean
+  [key:string]:string | boolean | number
 }
 
 export interface FilterObject {
   name: string
-  value: string | boolean
+  value: string | boolean | number
 }
 
 @Injectable({
@@ -76,6 +76,13 @@ export class FiltersService {
 
     if(this._filters["operation_type"]=="Alquiler") base_query.operation_types=[2,3]
 
+    if(this._filters["type"]=="Departamento") base_query.property_types=[2]
+    else if(this._filters["type"]=="Casa") base_query.property_types=[3]
+
+    if(this._filters["minPrice"]) base_query.price_from=  Number(this._filters["minPrice"])
+    if(this._filters["maxPrice"]) base_query.price_to=  Number(this._filters["maxPrice"])
+
+
     return JSON.stringify(base_query)
 
   }
@@ -104,12 +111,12 @@ export class FiltersService {
     }
   }
 
-  toggle(filterObj: FilterObject): void {
+  /* toggle(filterObj: FilterObject): void {
     if (this.isActive(filterObj.name,filterObj.value)) {
       this.remove(filterObj)
     } else {
       this.add(filterObj)
     }
 
-  }
+  } */
 }
