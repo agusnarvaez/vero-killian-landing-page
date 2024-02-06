@@ -45,7 +45,6 @@ app-products-card{
 @media (min-width: 530px) {
 
     app-products-card{
-        width: 47%;
         display: flex;
         align-items: stretch;
     }
@@ -53,12 +52,13 @@ app-products-card{
     main .banner{
         margin-bottom: 15%;
     }
+    main section {
+        flex-wrap: wrap;
+    }
 }
 
 @media (min-width: 950px) {
-    app-products-card{
-        width: 31%;
-    }
+
     main .banner{
         margin-bottom: 5%;
     }
