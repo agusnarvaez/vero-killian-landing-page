@@ -1,14 +1,13 @@
 import { Component, Input, ViewChild } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule, NgForm } from '@angular/forms'
-import { ButtonComponent } from '../../../components/button/button.component'
 import { EmailService } from '../../../services/email/email.service'
 import { Mail } from '../../../models/mail'
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [CommonModule,FormsModule,ButtonComponent],
+  imports: [CommonModule,FormsModule],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.css'
 })
