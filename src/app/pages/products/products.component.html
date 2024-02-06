@@ -1,5 +1,9 @@
 <main>
-    <app-products-filter (filterChange)="onFilterChange()"></app-products-filter>
+    <div class="banner">
+        <img src="assets/backgrounds/products-banner.jpg" alt="Banner de productos" class="banner-image" />
+        <h1 class="banner-title">Encontrá el hogar de tus sueños</h1>
+        <app-products-filter (filterChange)="onFilterChange()"></app-products-filter>
+    </div>
 
     @if (listIsEmpty()) {
         <h3>No se encontraron propiedades para su {{typeOfOperation()}}</h3>
