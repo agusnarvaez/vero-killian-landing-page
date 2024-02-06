@@ -1,6 +1,85 @@
-<section>
-    <app-button text="Comprar" class="main-filter-btn" [type]="isSellFilterActive ? '' : 'secondary'" (click)="toggleFilter({name: 'operation_type', value:'Venta'})"></app-button>
-    <app-button text="Alquilar" class="main-filter-btn" [type]="isRentFilterActive ? '' : 'secondary'" (click)="toggleFilter({name: 'operation_type', value:'Alquiler'})"></app-button>
-    <app-button text="Mas filtros (0)" class="secondary-filter-btn" icon="fa-solid fa-filter" type="secondary"></app-button>
-    <app-button class="search-btn" icon="fa fa-search fa-solid fa-magnifying-glass" ></app-button>
-</section>
+<form
+    class="filter-form" [ngClass]="{'showFilters': showFilters}"
+    #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="input-container">
+        <label for="filter-neighborhood">Ciudad o barrio </label>
+        <input
+            id="filter-neighborhood"
+            type="text"
+            class="search-input"
+            placeholder="Palermo, San Isidro"
+            name="filter-neighborhood"
+            [(ngModel)]="neighborhood"
+            />
+    </div>
+    <button type="button"
+        (click)="toggleFilters()"
+    class="filter-button"><i class=" fa fa-filter fa-solid"></i>
+    @if(showFilters){ Menos} @else { Más}
+    Filtros</button>
+    <button type="button"
+        (click)="clearFilters()"
+        class="reset-btn">
+        <i class="fa fa-solid fa-arrow-rotate-right"></i>
+    </button>
+    <button type="submit" class="search-btn fa fa-search fa-solid fa-magnifying-glass"></button>
+    <div class="input-container">
+        <label for="typeFilter">Tipo</label>
+        <select
+            id="typeFilter"
+            name="type"
+            [(ngModel)]="type"
+        >
+            <option value="" disabled selected>Tipo de propiedad</option>
+            <option value="Departamento">Departamento</option>
+            <option value="Casa">Casa</option>
+        </select>
+    </div>
+    <div class="input-container">
+        <label for="roomsFilter">Habitaciones</label>
+        <input
+            type="number"
+            placeholder="2, 3, 4..."
+            id="roomsFilter"
+            name="rooms"
+            [(ngModel)]="rooms"
+            min="0"
+            #roomsField="ngModel"
+        />
+            <div class="contact-errors" *ngIf="roomsField.invalid && (roomsField.dirty || roomsField.touched)">
+                <small *ngIf="roomsField.errors?.['min']">La propiedad debe contar con al menos una habitación.</small>
+            </div>
+    </div>
+
+    <div class="input-container">
+        <label for="minPriceFilter">Precio Min</label>
+        <input
+            type="number"
+            placeholder="123000"
+            id="minPriceFilter"
+            name="minPrice"
+            [(ngModel)]="minPrice"
+            min="0"
+            #minPriceField="ngModel"
+            />
+            <div class="contact-errors" *ngIf="minPriceField.invalid && (minPriceField.dirty || minPriceField.touched)">
+                <small *ngIf="minPriceField.errors?.['min']">El precio mínimo debe ser mayor a 0.</small>
+            </div>
+    </div>
+    <div class="input-container">
+        <label for="minPriceFilter">Precio Max</label>
+        <input
+            type="number"
+            placeholder="123000"
+            id="maxPriceFilter"
+            name="maxPrice"
+            [(ngModel)]="maxPrice"
+            min="0"
+            #maxPriceField="ngModel"
+            />
+            <div class="contact-errors" *ngIf="maxPriceField.invalid && (maxPriceField.dirty || maxPriceField.touched)">
+                <small *ngIf="maxPriceField.errors?.['min']">El precio mínimo debe ser mayor a 0.</small>
+            </div>
+    </div>
+
+</form>
