@@ -1,15 +1,125 @@
-section{
+main{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10% 5%;
-    gap: 1rem;
+    justify-content: flex-start;
+    padding: 0% 5% 5% 5%;
+    gap: 3rem;
+    position: relative;
+    min-height: 90vh;
+}
+main .sell-banner{
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+main::after{
+    content: '';
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-section img{
+
+.sell-info{
     width: 100%;
-    object-fit: contain;
+    display: flex;
+    height: 90vh;
+    /* flex-direction: column; */
+    align-items: flex-start;
+    padding: 10% 0%;
+    gap: 2rem;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    color: var(--light-color);
+    text-align: start;
+}
+.sell-info h2{
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: start;
+}
+.sell-info p{
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: start;
+}
+.sell-info header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.sell-info .links{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.sell-info .faq-link{
+    border-radius: 3rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%), rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(2px);
+    font-size: 1.6rem;
+    color: var(--light-color);
+    align-items: center;
+    display: flex;
+    padding: 1rem 2rem;
+    font-weight: 500;
+    gap: 1rem;
+    text-decoration: none;
+}
+.sell-info .faq-link:hover,
+.sell-info .faq-link:active{
+    color: var(--primary-color);
+    background-color: var(--light-color);
+}
+
+.sell-info > .arrow-button{
+    align-self: flex-end;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+form h2{
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 600;
+}
+main form .input-container label{
+    text-align: start;
+    font-size: 1.5rem;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
 }
 
 section p{
@@ -36,24 +146,86 @@ section app-button{
     object-fit: cover;
     border-radius: 50rem;
 }
+main form .btn-double *{
+    font-weight: 600;
+
+}
 
 @media (min-width: 530px) {
+    .sell-info h2{
+        font-size: 2.5rem;
+    }
+    .sell-info p{
+        font-size: 1.8rem;
+    }
+
+    main form{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-radius: 2rem;
+    }
+    main form h2{
+        width: 100%;
+        text-align: start;
+        font-weight: 600;
+    }
+
+    main form .input-container{
+        width: 47%;
+        gap: 0;
+    }
+
+    main form h2:last-of-type{
+        margin-top: 3rem;
+    }
+
+    main form .btn-double{
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 950px) {
     main{
         flex-direction: row;
-        justify-content: space-between;
-        align-items: start;
-        padding: 10% 3%;
+        padding: 3% 3%;
+        align-items: stretch;
     }
-    section{
-        width: 55%;
-        padding: 0;
-        align-items: flex-start;
+    main .sell-banner,
+    main::after{
+        height: 100%;
+
     }
-    section p{
-        text-align: start;
-        font-size: 1.5rem;
+    main section > .arrow-button{
+        display: none;
     }
-    .container{
+    main .sell-info{
         width: 40%;
+        height: auto;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    main form{
+        width: 55%;
+        background-color: var(--light-color);
+        padding: 3%;
+        z-index: 2;
+    }
+    main form h2:last-of-type{
+        margin-top: 1rem;
+    }
+
+    main form .btn-double{
+        margin-top: 1rem;
+    }
+
+}
+
+@media (min-width: 1110px) {
+    main form{
+        padding: 2%;
     }
 }

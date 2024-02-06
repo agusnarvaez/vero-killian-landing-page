@@ -1,16 +1,192 @@
 <main>
-    <section>
-        <img  src="../../../assets/backgrounds/sell-slogan.png" alt="¿Querés vender una propiedad?" title="¿Querés vender una propiedad?"/>
-        <p>
-            ¡Juntos podemostrabajar para que tengas la mejor experiencia a la hora de vender tu propiedad!
-        </p>
-        <p>
-            Envianos un mensaje para solicitar una tasación y el equipo especialista se va a poner en contacto con vos para gestionar la venta de la mejor manera.
-        </p>
+    <img class="sell-banner"  src="assets/backgrounds/sell-banner.jpg" alt="¿Querés vender una propiedad?" title="¿Querés vender una propiedad?"/>
+    <section class="sell-info">
+        <header>
+            <h2>¿Estás pensando en vender tu propiedad?</h2>
+            <p>
+                Completá el formulario con los datos correspondientes y solicitá una tasación
+            </p>
+        </header>
+        <div class="links">
+            <h2>¿Necesitás mas información?</h2>
+            <a class="faq-link"><i class="fa fa-solid fa-link "></i> ¿Qué necesito para vender una propiedad?</a>
+            <a class="faq-link"><i class="fa fa-solid fa-link "></i> ¿Cuáles son los gastos estimados en una operación de compraventa?</a>
+            <a class="faq-link"><i class="fa fa-solid fa-link "></i> ¿Cómo preparo mi casa para el relevamiento multimedia y las visitas?</a>
+        </div>
 
-        <app-button type="secondary" text="Contactame" link="/contacto"></app-button>
+        <i (click)="scrollToNext()" class="arrow-button fa fa-solid fa-arrow-down"></i>
     </section>
-    <div class="container">
-        <img class="sell-image" src="../../../assets/backgrounds/sell-image.png" alt="Imagen conceptual de venta" title="Imagen conceptual de venta"/>
-    </div>
+
+    <form id="sellForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <h2>Datos del vendedor</h2>
+        <div class="input-container">
+            <label for="contactName">Nombre y apellido</label>
+            <input
+                type="text"
+                placeholder="Juan Perez"
+                id="contactName"
+                [(ngModel)]="fullName"
+                name="fullName"
+                required
+                minlength="3"
+                #fullNameField="ngModel"
+                required
+                />
+            <div class="contact-errors" *ngIf="fullNameField.invalid && (fullNameField.dirty || fullNameField.touched)">
+                <small *ngIf="fullNameField.errors?.['required']">El nombre es obligatorio.</small>
+                <small *ngIf="fullNameField.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</small>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="contactEmail">Email</label>
+            <input
+                type="email"
+                placeholder="juan.perez@hotmail.com"
+                id="contactEmail"
+                [(ngModel)]="email"
+                name="email"
+                required
+                email
+                #emailField="ngModel"
+                required
+                />
+            <div class="contact-errors" *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)">
+                <small *ngIf="emailField.errors?.['required']">El email es obligatorio.</small>
+                <small *ngIf="emailField.errors?.['email']">El email no es válido.</small>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="contactPhone">Teléfono</label>
+            <input
+                type="text"
+                placeholder="11 1234 5678"
+                id="contactPhone"
+                [(ngModel)]="phone"
+                name="phone"
+                pattern="[0-9 ]+"
+                #phoneField="ngModel"
+                required
+                />
+            <div class="contact-errors" *ngIf="phoneField.invalid && (phoneField.dirty || phoneField.touched)">
+                <small *ngIf="phoneField.errors?.['required']">El teléfono es obligatorio.</small>
+                <small *ngIf="phoneField.errors?.['pattern']">Solo se permiten números y espacios.</small>
+            </div>
+        </div>
+
+        <h2>Datos de la propiedad</h2>
+        <div class="input-container">
+            <label for="neighborhood">Barrio</label>
+            <input
+                type="text"
+                placeholder="Palermo"
+                id="neighborhood"
+                [(ngModel)]="neighborhood"
+                name="neighborhood"
+                #neighborhoodField="ngModel"
+                required
+                />
+            <div class="contact-errors" *ngIf="neighborhoodField.invalid && (neighborhoodField.dirty || neighborhoodField.touched)">
+                <small *ngIf="neighborhoodField.errors?.['required']">El barrio es obligatorio.</small>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="address">Dirección aproximada</label>
+            <input
+                type="text"
+                placeholder="Av. Juan B. Justo al 1000"
+                id="address"
+                [(ngModel)]="address"
+                name="address"
+                #addressField="ngModel"
+                required
+                />
+            <div class="contact-errors" *ngIf="addressField.invalid && (addressField.dirty || addressField.touched)">
+                <small *ngIf="addressField.errors?.['required']">La dirección es obligatoria.</small>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="type">Tipo de propiedad</label>
+            <select
+                id="type"
+                name="type"
+                [(ngModel)]="type"
+                required
+                #typeField="ngModel">
+                <option value="" disabled selected>Seleccione un tipo</option>
+                <option value="Casa">Casa</option>
+                <option value="Departamento">Departamento</option>
+                <option value="PH">PH</option>
+            </select>
+            <div class="contact-errors" *ngIf="typeField.invalid && (typeField.dirty || typeField.touched)">
+                <small *ngIf="typeField.errors?.['required']">Debes seleccionar un tipo.</small>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="isRecycled">¿Es reciclada?</label>
+            <select
+                id="isRecycled"
+                name="isRecycled"
+                [(ngModel)]="isRecycled"
+                required
+                #isRecycledField="ngModel">
+                <option value="" disabled selected>Seleccione su respuesta</option>
+                <option value="true">Sí</option>
+                <option value="false">No</option>
+            </select>
+            <div class="contact-errors" *ngIf="isRecycledField.invalid && (isRecycledField.dirty || isRecycledField.touched)">
+                <small *ngIf="isRecycledField.errors?.['required']">Debes seleccionar un tipo.</small>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="coveredArea">M2 cubiertos</label>
+            <input
+                type="text"
+                placeholder="123"
+                id="coveredArea"
+                [(ngModel)]="coveredArea"
+                name="coveredArea"
+                #coveredAreaField="ngModel"
+                required
+                min="1"
+
+                />
+            <div class="contact-errors" *ngIf="coveredAreaField.invalid && (coveredAreaField.dirty || coveredAreaField.touched)">
+                <small *ngIf="coveredAreaField.errors?.['required']">Debes ingresar un valor.</small>
+                <small *ngIf="coveredAreaField.errors?.['min']">El valor debe ser mayor que 0.</small>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="uncoveredArea">M2 descubiertos</label>
+            <input
+                type="text"
+                placeholder="123"
+                id="uncoveredArea"
+                [(ngModel)]="uncoveredArea"
+                name="uncoveredArea"
+                #uncoveredAreaField="ngModel"
+                min="0"
+                required/>
+            <div class="contact-errors" *ngIf="uncoveredAreaField.invalid && (uncoveredAreaField.dirty || uncoveredAreaField.touched)">
+                <small *ngIf="uncoveredAreaField.errors?.['required']">Debes ingresar un valor.</small>
+                <small *ngIf="uncoveredAreaField.errors?.['min']">El valor debe ser mayor o igual que 0.</small>
+            </div>
+        </div>
+
+        <div class="btn-double">
+            <button type="submit">Solicitar tasación</button>
+            <button type="submit" class="arrow-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                    <path d="M16.2231 24.0012L22.1267 18.0975L22.1189 23.2233C22.1189 23.5163 22.2353 23.7972 22.4424 24.0043C22.6496 24.2115 22.9305 24.3278 23.2234 24.3278C23.5164 24.3278 23.7973 24.2115 24.0044 24.0043C24.2116 23.7972 24.3279 23.5163 24.3279 23.2233L24.3279 15.4452C24.3248 15.3004 24.293 15.1576 24.2346 15.0251C24.123 14.758 23.9106 14.5456 23.6434 14.434C23.5109 14.3755 23.3682 14.3438 23.2234 14.3407L15.4452 14.3407C15.3 14.3401 15.1561 14.3682 15.0219 14.4235C14.8876 14.4788 14.7656 14.5602 14.6629 14.6628C14.5602 14.7655 14.4789 14.8875 14.4236 15.0218C14.3683 15.1561 14.3402 15.2999 14.3407 15.4452C14.3402 15.5904 14.3683 15.7343 14.4236 15.8685C14.4789 16.0028 14.5602 16.1248 14.6629 16.2275C14.7656 16.3302 14.8876 16.4115 15.0219 16.4668C15.1561 16.5221 15.3 16.5503 15.4452 16.5497L20.5711 16.5419L14.6674 22.4455C14.4611 22.6518 14.3452 22.9316 14.3452 23.2233C14.3452 23.5151 14.4611 23.7949 14.6674 24.0012C14.8737 24.2074 15.1535 24.3233 15.4452 24.3233C15.737 24.3233 16.0168 24.2074 16.2231 24.0012Z" fill="#F5F5F5"/>
+                </svg>
+            </button>
+        </div>
+
+    </form>
 </main>
