@@ -16,7 +16,7 @@ describe('HeaderComponent', () => {
           useValue: {
             snapshot: {
               data: {
-                title: 'pau-dallochio-landing-page'
+                title: 'vero-killian-landing-page'
               }
             }
           }

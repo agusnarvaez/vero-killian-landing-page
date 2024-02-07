@@ -44,9 +44,9 @@ export class ContactFormComponent {
 
   async onSubmit() {
     const notification = new Mail(
-      'inmobiliaria@pauladallochio.com.ar',
-      /* 'agus.narvaez@outlook.com', */
-      'no_reply@pauladallochio.com.ar',
+      /* 'inmobiliaria@veritokillian.ar', */
+      'agus.narvaez@outlook.com',
+      'no_reply@veritokillian.ar',
       `Nuevo mensaje de ${this.fullName} - ${this.subject}` ,
       this.message,
       `
@@ -57,7 +57,7 @@ export class ContactFormComponent {
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480">${this.email}</p>
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480">${this.phone}</p>
         <div style="background-color: #FFFFF0; text-align: center; padding: 10px;">
-          <img src="https://pauladallochio.com.ar/assets/logos/logo-header.png" alt="Logo Paula Dallochio" style="width: 100px; height: auto;" />
+          <img src="https://veritokillian.ar/assets/logos/logo-header.png" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
         </div>
       </body>
       `
@@ -66,7 +66,7 @@ export class ContactFormComponent {
 
     const mailToSend = new Mail(
       this.email,
-      'no_reply@pauladallochio.com.ar',
+      'no_reply@veritokillian.ar',
       `Solicitud de información - ${this.subject}` ,
       'Gracias por contactarte con nosotros, en breve nos pondremos en contacto con vos.',
       `
@@ -75,7 +75,7 @@ export class ContactFormComponent {
         <h2 style="padding: 0 5%; font-size: 12px; color: #9D9480" >Tu consulta sobre ${this.subject} ya fue enviada</h2>
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480" >Te estaremos contestando a la brevedad</p>
         <div style="background-color: #FFFFFF0; text-align: center; padding: 10px;">
-          <img src="https://pauladallochio.com.ar/assets/logos/logo-header.png" alt="Logo Paula Dallochio" style="width: 100px; height: auto;" />
+          <img src="https://veritokillian.ar/assets/logos/logo-header.png" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
         </div>
       </body>
       `

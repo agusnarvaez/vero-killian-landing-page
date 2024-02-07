@@ -38,17 +38,17 @@ export class SellComponent {
   constructor(private metaTagService: Meta,private titleService: Title,public emailService: EmailService) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Vendé tu propiedad - Paula Dallochio Inmobiliaria')
-    this.metaTagService.updateTag({ name: 'description', content: '¿Querés vender tu propiedad? Paula Dallochio te ofrece asesoramiento experto y personalizado para que puedas vender tu propiedad al mejor precio.' })
+    this.titleService.setTitle('Vendé tu propiedad - Verónica Killian Inmobiliaria')
+    this.metaTagService.updateTag({ name: 'description', content: '¿Querés vender tu propiedad? Verónica Killian te ofrece asesoramiento experto y personalizado para que puedas vender tu propiedad al mejor precio.' })
     this.metaTagService.updateTag({ name: 'keywords', content: ' Venta de propiedades, vender mi casa, vender mi departamento, vender mi terreno, vender mi local comercial, vender mi propiedad, asesoramiento inmobiliario, asesoramiento para vender mi propiedad' })
 
-    this.metaTagService.updateTag({ property: 'og:title', content: 'Vendé tu propiedad - Paula Dallochio Inmobiliaria' })
-    this.metaTagService.updateTag({ property: 'og:description', content: '¿Querés vender tu propiedad? Paula Dallochio te ofrece asesoramiento experto y personalizado para que puedas vender tu propiedad al mejor precio.' })
-    this.metaTagService.updateTag({ property: 'og:url', content: 'https://www.pauladallochio.com.ar/vender' })
+    this.metaTagService.updateTag({ property: 'og:title', content: 'Vendé tu propiedad - Verónica Killian Inmobiliaria' })
+    this.metaTagService.updateTag({ property: 'og:description', content: '¿Querés vender tu propiedad? Verónica Killian te ofrece asesoramiento experto y personalizado para que puedas vender tu propiedad al mejor precio.' })
+    this.metaTagService.updateTag({ property: 'og:url', content: 'https://www.veritokillian.ar/vender' })
 
-    this.metaTagService.updateTag({ name: 'twitter:title', content: 'Vendé tu propiedad - Paula Dallochio Inmobiliaria' })
-    this.metaTagService.updateTag({ name: 'twitter:description', content: '¿Querés vender tu propiedad? Paula Dallochio te ofrece asesoramiento experto y personalizado para que puedas vender tu propiedad al mejor precio.' })
-    this.metaTagService.updateTag({ name: 'twitter:url', content: 'https://www.pauladallochio.com.ar/vender' })
+    this.metaTagService.updateTag({ name: 'twitter:title', content: 'Vendé tu propiedad - Verónica Killian Inmobiliaria' })
+    this.metaTagService.updateTag({ name: 'twitter:description', content: '¿Querés vender tu propiedad? Verónica Killian te ofrece asesoramiento experto y personalizado para que puedas vender tu propiedad al mejor precio.' })
+    this.metaTagService.updateTag({ name: 'twitter:url', content: 'https://www.veritokillian.ar/vender' })
   }
   scrollToNext() {
     const element = document.getElementById('sellForm')
@@ -74,8 +74,8 @@ export class SellComponent {
 
   async onSubmit() {
     const notification = new Mail(
-      'inmobiliaria@veritokillian.ar',
-      /* 'agus.narvaez@outlook.com', */
+      /* 'inmobiliaria@veritokillian.ar', */
+      'agus.narvaez@outlook.com',
       'no_reply@veritokillian.ar',
       `Nuevo mensaje de ${this.fullName} - Vender` ,
       this.message,
@@ -94,7 +94,7 @@ export class SellComponent {
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480">Metros cubiertos: ${this.coveredArea}</p>
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480">Metros descubiertos: ${this.uncoveredArea}</p>
         <div style="background-color: #FFFFF0; text-align: center; padding: 10px;">
-          <img src="https://pauladallochio.com.ar/assets/logos/logo-header.png" alt="Logo Paula Dallochio" style="width: 100px; height: auto;" />
+          <img src="https://veritokillian.ar/assets/logos/logo-header.png" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
         </div>
       </body>
       `
@@ -112,7 +112,7 @@ export class SellComponent {
         <h2 style="padding: 0 5%; font-size: 12px; color: #9D9480" >Tu consulta para vender tu inmueble ya fue enviada</h2>
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480" >Te estaremos contestando a la brevedad</p>
         <div style="background-color: #FFFFFF0; text-align: center; padding: 10px;">
-          <img src="https://veritokillian.ar/assets/logos/logo-header.png" alt="Logo Paula Dallochio" style="width: 100px; height: auto;" />
+          <img src="https://veritokillian.ar/assets/logos/logo-header.png" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
         </div>
       </body>
       `

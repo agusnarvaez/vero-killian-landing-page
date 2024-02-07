@@ -64,17 +64,17 @@ export class ProductsComponent {
     // Lógica para inicializar `this.list`
     this.updateProductsList()
 
-    this.titleService.setTitle('Catálogo de Propiedades - Paula Dallochio Inmobiliaria')
-    this.metaTagService.updateTag({ name: 'description', content: 'Explora nuestro catálogo de propiedades cuidadosamente seleccionadas. Paula Dallochio te ofrece las mejores opciones inmobiliarias del mercado para tu elección ideal.' })
+    this.titleService.setTitle('Catálogo de Propiedades - Verónica Killian Inmobiliaria')
+    this.metaTagService.updateTag({ name: 'description', content: 'Explora nuestro catálogo de propiedades cuidadosamente seleccionadas. Verónica Killian te ofrece las mejores opciones inmobiliarias del mercado para tu elección ideal.' })
     this.metaTagService.updateTag({ name: 'keywords', content: ' Catálogo de propiedades, propiedades en venta, propiedades en alquiler, propiedades en venta y alquiler, catálogo de propiedades inmobiliarias' })
 
-    this.metaTagService.updateTag({ property: 'og:title', content: 'Catálogo de Propiedades - Paula Dallochio Inmobiliaria' })
-    this.metaTagService.updateTag({ property: 'og:description', content: 'Explora nuestro catálogo de propiedades cuidadosamente seleccionadas. Paula Dallochio te ofrece las mejores opciones inmobiliarias del mercado para tu elección ideal.' })
-    this.metaTagService.updateTag({ property: 'og:url', content: 'https://www.pauladallochio.com.ar/catalogo' })
+    this.metaTagService.updateTag({ property: 'og:title', content: 'Catálogo de Propiedades - Verónica Killian Inmobiliaria' })
+    this.metaTagService.updateTag({ property: 'og:description', content: 'Explora nuestro catálogo de propiedades cuidadosamente seleccionadas. Verónica Killian te ofrece las mejores opciones inmobiliarias del mercado para tu elección ideal.' })
+    this.metaTagService.updateTag({ property: 'og:url', content: 'https://www.veritokillian.ar/catalogo' })
 
-    this.metaTagService.updateTag({ name: 'twitter:title', content: 'Catálogo de Propiedades - Paula Dallochio Inmobiliaria' })
-    this.metaTagService.updateTag({ name: 'twitter:description', content: 'Explora nuestro catálogo de propiedades cuidadosamente seleccionadas. Paula Dallochio te ofrece las mejores opciones inmobiliarias del mercado para tu elección ideal.' })
-    this.metaTagService.updateTag({ name: 'twitter:url', content: 'https://www.pauladallochio.com.ar/catalogo' })
+    this.metaTagService.updateTag({ name: 'twitter:title', content: 'Catálogo de Propiedades - Verónica Killian Inmobiliaria' })
+    this.metaTagService.updateTag({ name: 'twitter:description', content: 'Explora nuestro catálogo de propiedades cuidadosamente seleccionadas. Verónica Killian te ofrece las mejores opciones inmobiliarias del mercado para tu elección ideal.' })
+    this.metaTagService.updateTag({ name: 'twitter:url', content: 'https://www.veritokillian.ar/catalogo' })
 
   }
 

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pau-dallochio-landing-page": {
+    "vero-killian-landing-page": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/pau-dallochio-landing-page",
+            "outputPath": "dist/vero-killian-landing-page",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "pau-dallochio-landing-page:build:production"
+              "buildTarget": "vero-killian-landing-page:build:production"
             },
             "development": {
-              "buildTarget": "pau-dallochio-landing-page:build:development"
+              "buildTarget": "vero-killian-landing-page:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "pau-dallochio-landing-page:build"
+            "buildTarget": "vero-killian-landing-page:build"
           }
         },
         "test": {
