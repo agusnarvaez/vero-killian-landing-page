@@ -102,7 +102,28 @@ a:hover{
     text-decoration: underline;
 }
 
+.whatsapp-icon{
+    position: fixed;
+    bottom:3%;
+    right: 3%;
+    z-index: 1000;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50rem;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+    font-size: 3rem;
+}
 
+.whatsapp-icon:hover{
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    text-decoration: none;
+}
 .info-section{
     justify-content: space-between;
     padding: 5%;
