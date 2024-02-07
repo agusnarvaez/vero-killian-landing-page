@@ -1,16 +1,16 @@
-<header [ngClass]="showHeader ? 'show' : ''">
-    <a class="header-logo" [routerLink]="['']">
+<header class="flex-box" [ngClass]="showHeader ? 'show' : ''">
+    <a class="header-logo flex-box" [routerLink]="['']">
         <img src="../../../assets/logos/logo-header.png" alt="logo-vero-killian" />
     </a>
-    <div class="header-button" [ngClass]="showHeader ? 'show' : ''" (click)="toggleHeader()" >
+    <div class="header-button " [ngClass]="showHeader ? 'show' : ''" (click)="toggleHeader()" >
         <div></div>
     </div>
-    <nav [ngClass]="showHeader ? 'show' : ''">
-        <ul>
-            <li (click)="toggleHeader()" ><a [routerLink]="['']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-            <li (click)="toggleHeader()" ><a [routerLink]="['catalogo']" [routerLinkActive]="['active']">Comprar</a></li>
-            <li (click)="toggleHeader()" ><a [routerLink]="['vender']" [routerLinkActive]="['active']">Vender</a></li>
-            <li (click)="toggleHeader()" ><a [routerLink]="['contacto']" [routerLinkActive]="['active']">Contacto</a></li>
+    <nav class="flex-box" [ngClass]="showHeader ? 'show' : ''">
+        <ul class="flex-box">
+            <li class="flex-box" (click)="toggleHeader()" ><a [routerLink]="['']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+            <li class="flex-box" (click)="toggleHeader()" ><a [routerLink]="['catalogo']" [routerLinkActive]="['active']">Comprar</a></li>
+            <li class="flex-box" (click)="toggleHeader()" ><a [routerLink]="['vender']" [routerLinkActive]="['active']">Vender</a></li>
+            <li class="flex-box" (click)="toggleHeader()" ><a [routerLink]="['contacto']" [routerLinkActive]="['active']">Contacto</a></li>
         </ul>
     </nav>
 </header>
