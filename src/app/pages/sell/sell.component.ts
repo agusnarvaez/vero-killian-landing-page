@@ -74,8 +74,8 @@ export class SellComponent {
 
   async onSubmit() {
     const notification = new Mail(
-      /* 'inmobiliaria@veritokillian.ar', */
-      'agus.narvaez@outlook.com',
+      'inmobiliaria@veritokillian.ar',
+      /* 'agus.narvaez@outlook.com', */
       'no_reply@veritokillian.ar',
       `Nuevo mensaje de ${this.fullName} - Vender` ,
       this.message,
