@@ -13,28 +13,39 @@ export class HomeFaqComponent {
   constructor() {}
   faqList = [
     {
-      question: '¿Qué documentación necesito para poder publicar mi propiedad?',
+      question: 'Quiero comprar una propiedad',
       answer:
-        'PARA OPERACIONES DE VENTA: <br>• Título de propiedad, declaratoria de herederos o poder DNI de los titulares, o apoderados <br>• Reglamento de copropiedad (en caso de departamentos o PH) <br>• Plano <br> • Liquidación de expensas <br>• Impuesto municipal <br>• COTI'
+        'Contactame y coordinamos una reunión presencial o virtual para poder guiarte en el proceso. Necesitas tener claro cuánto dinero podrías invertir, cuál es el objetivo de la búsqueda de compra. El asesor va a guiarte en la búsqueda, canalizando las consultas por vos, para realizar visitas acertadas sin perder tiempo, optimizando la búsqueda acorde a tus necesidades y objetivo.'
     },
     {
-      question: '¿Cuáles son los gastos estimados en una operación de compraventa?',
+      question: '¿Que necesito para tasar mi propiedad?',
       answer:
-        'PARA OPERACIONES DE VENTA: <br> • IMPUESTOS: (se abonan en pesos al equivalente del valor del dólar oficial) Retiene el escribano actuante. Se liquidan sobre el valor de escrituración . Sellos 1.75% (por parte), I.T.I. (en caso de corresponder) 1,5%, IVA. <br> • GASTOS DE ESCRIBANÍA: 1-2% (Se solicita presupuesto al escribano actuante) <br> • HONORARIOS INMOBILIARIA: 3%  <br> • IVA (cliente vendedor); 4% <br> • IVA (cliente comprador) <br> • HONORARIOS ESCRIBANÍA: Solo le corresponden al cliente comprador'
-    },
-    /* {
-      question: '¿Cuál es la inversión inicial para un alquiler?',
-      answer:
-        'PARA OPERACIONES DE ALQUILER RESIDENCIAL PERMANENTE: <br><br> Honorarios inmobiliaria: 4.15% del total del alquiler (Se calcula con el valor del primer mes multiplicado por 36 meses de la duración mínima del contrato.  Los abona la parte LOCATARIA). <br><br> Certificación de firma por escribano'
-    }, */
-    {
-      question: '¿Cómo calculo el índice de ajuste de mi alquiler?',
-      answer: '<a href="https://cpicalq.portalcucicba.com.ar/calculo_add.php" target="_blank" rel="noreferer" >CALCULADORA DE AJUSTE</a>'
+        '-Necesitas tener tu título de propiedad. No tengo el título, escribime y te asesoro. Del título el matriculado va a obtener la cantidad de m2 exactos para realizar una buena tasación y asesorarte en la lectura del mismo para confirmar cuantos titulares son y si se necesita otra documentación respaldatoria para poder vender. <br>-El matriculado necesita acercarse a la propiedad y conocerla.'
     },
     {
-      question: '¿Cómo preparo mi casa para el relevamiento multimedia y las visitas?',
+      question: '¿Que necesito para publicar una propiedad?',
       answer:
-        'El Home staging o puesta en escena, es la forma en que se prepara tu inmueble para que se luzca en la publicación y las visitas de los interesados.  Sugerimos: <br> •	Despejar muebles y ambientes <br>•	Despersonalizar muros, quitar fotos e imágenes religiosas <br>•	Mejorar el atractivo exterior <br>•	Darle estilo a la mesa del comedor <br>•	Generar un espacio de relax al aire libre <br>•	Prestar atención a la estación del año <br>•	Limpiar y ventilar <br>•	Guardar cualquier juguete u objeto que pueda estar sobre el piso <br>•	Aromatizar sutilmente'
+        "-Título de propiedad, declaratoria de herederos, poder, DNI de los titulares o apoderados. No tengo el título, ¿no se cuál es?, ¿porque necesito la declaratoria?, <a href='vender'>escribime</a> y te asesoro.<br>-Si querés vender un departamento o PH vamos a necesitar el REGLAMENTO DE COPROPIEDAD<br>-Si tenés PLANOS mejor<br>-Detalle de los SERVICIOS, IMPUESTOS y EXPENSAS actualizados."
+    },
+    {
+      question: '¿Tengo que preparar mi propiedad para el relevamiento fotográfico?',
+      answer:
+        'Sí, es super importante trabajar juntos a la hora de mostrar tu propiedad. Hacerlo con profesionales calificados es el punto más importante en la inversión que voy a realizar en tú propiedad.<br>Tanto en propiedades vacías o habitadas hay que limpiar todos los ambientes para el día del relevamiento fotográfico y video.<br>Minimizar al máximo la cantidad de muebles y ornamentos. Despersonalizar muros y muebles retirando retratos personales e imágenes religiosas.'
+    },
+    {
+      question: '¿Tengo que preparar mi propiedad para las visitas?',
+      answer:
+        'Sí. Limpieza y ventilación de ambientes.<br>Cuidar el orden en todos los ambientes incluso en los placares.<br>Si tenés espacio exterior debe estar limpio y accesible.'
+    },
+    {
+      question: '¿Por qué elegir un agente matriculado a la hora de comprar una propiedad?',
+      answer:
+        'Estar asesorado 100% desde el inicio de tu idea de compra tiene mucho TIEMPO de inversión. Ese tiempo bien utilizado se deduce en tranquilidad legal, inversión de dinero, optimización de tiempo real y obtención del objetivo.'
+    },
+    {
+      question: '¿Que gastos tengo que tener en cuenta para comprar o vender una propiedad?',
+      answer:
+        'IMPUESTO DE SELLOS 1,75% por partes iguales, en pesos sobre el valor de escrituración, esto lo retiene el Escribano. + IVA<br>ITI (al vendedor si corresponde) 1,5% en pesos sobre el valor de escrituración, esto lo retiene el Escribano. + IVA<br>Honorarios del Escribanía solo le corresponden al comprador el 1% o 2 %<br>Honorarios Inmobiliarios parte Vendedora 3% + IVA<br>Honorarios Inmobiliarios parte Vendedora 4% + IVA'
     }
   ]
 
