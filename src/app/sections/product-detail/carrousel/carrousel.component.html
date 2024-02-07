@@ -63,16 +63,12 @@
             </div>
         </div>
         <div class="carousel__controls">
-            <app-button
+            <i
                 (click)="prevImage()"
-                type="secondary"
-                [rounded]="true"
-                icon="fa fa-solid fa-chevron-left"></app-button>
-            <app-button
-                [rounded]="true"
+                class="fa fa-solid fa-arrow-left"></i>
+            <i
                 (click)="nextImage()"
-                type="secondary"
-                icon="fa fa-solid fa-chevron-right"></app-button>
+                class="fa fa-solid fa-arrow-right"></i>
         </div>
     </section>
 }
