@@ -7,9 +7,9 @@ import { Mail } from '../../../models/mail'
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.css'
+  styleUrl: './contact-form.component.css',
 })
 export class ContactFormComponent {
   @ViewChild('myForm') myForm!: NgForm
@@ -20,26 +20,22 @@ export class ContactFormComponent {
 
   @Input() subject: string = ''
   showSubject = true
-  constructor(
-    public emailService: EmailService
-  ) {}
+  constructor(public emailService: EmailService) {}
   ngOnInit() {
-    if(this.subject !== '') {
+    if (this.subject !== '') {
       this.showSubject = false
     }
   }
 
   sendMail = (mailToSend: Mail) => {
-
     this.emailService.sendEmail(mailToSend).subscribe({
       next: (response) => {
         console.log(response)
       },
       error: (error) => {
         console.log(error)
-      }
+      },
     })
-
   }
 
   async onSubmit() {
@@ -47,38 +43,38 @@ export class ContactFormComponent {
       /* 'inmobiliaria@veritokillian.ar', */
       'agus.narvaez@outlook.com',
       'no_reply@veritokillian.ar',
-      `Nuevo mensaje de ${this.fullName} - ${this.subject}` ,
+      `Nuevo mensaje de ${this.fullName} - ${this.subject}`,
       this.message,
       `
-      <body style="width:100%; height: 100%; background-color: #FFFFF0; font-size: 10px; padding: 5% 0;">
-        <h1 style="padding: 0 5%; font-size: 15px; color: #9D9480">Hola Paula! - Tienes un nuevo mensaje de ${this.fullName}</h1>
+      <body style="width:100%; height: 100%; background-color: #475838; font-size: 10px; padding: 5% 0;">
+        <h1 style="padding: 0 5%; font-size: 15px; color: #9D9480">Hola Vero! - Tenés un nuevo mensaje de ${this.fullName}</h1>
         <h2 style="padding: 0 5%;  font-size: 12px; color: #9D9480">${this.subject}</h2>
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480">${this.message}</p>
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480">${this.email}</p>
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480">${this.phone}</p>
-        <div style="background-color: #FFFFF0; text-align: center; padding: 10px;">
-          <img src="https://veritokillian.ar/assets/logos/logo-header.png" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
+        <div style="background-color: #475838; text-align: center; padding: 10px;">
+          <img src="https://veritokillian.ar/assets/logos/logo-footer.png" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
         </div>
       </body>
-      `
+      `,
     )
     notification.cc = 'agus.narvaez@outlook.com'
 
     const mailToSend = new Mail(
       this.email,
       'no_reply@veritokillian.ar',
-      `Solicitud de información - ${this.subject}` ,
+      `Solicitud de información - ${this.subject}`,
       'Gracias por contactarte con nosotros, en breve nos pondremos en contacto con vos.',
       `
-      <body style="width:100%; height: 100%; background-color: #FFFFF0; font-size: 10px; padding: 5% 0;">
+      <body style="width:100%; height: 100%; background-color: #475838; font-size: 10px; padding: 5% 0;">
         <h1 style="padding: 0 5%; font-size: 15px; color: #9D9480" >Hola ${this.fullName}! - Gracias por contactarte con nosotros</h1>
         <h2 style="padding: 0 5%; font-size: 12px; color: #9D9480" >Tu consulta sobre ${this.subject} ya fue enviada</h2>
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480" >Te estaremos contestando a la brevedad</p>
-        <div style="background-color: #FFFFFF0; text-align: center; padding: 10px;">
-          <img src="https://veritokillian.ar/assets/logos/logo-header.png" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
+        <div style="background-color: #475838; text-align: center; padding: 10px;">
+          <img src="https://veritokillian.ar/assets/logos/logo-footer.png" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
         </div>
       </body>
-      `
+      `,
     )
 
     this.sendMail(notification)
