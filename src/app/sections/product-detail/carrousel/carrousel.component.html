@@ -1,5 +1,5 @@
 @if (noImages()) {
-    <div class="no-images">
+    <div class="no-images flex-box">
         <p>
             No se encuentran imágenes o videos para mostrar
         </p>
@@ -7,7 +7,7 @@
 }
 @else {
     <section>
-        <div class="carousel">
+        <div class="carousel flex-box">
             <div class="main-image_desktop">
                 @if(isVideo(actualImage())){
                     <!-- Youtube player -->
@@ -24,7 +24,7 @@
                     <img class="main-image_desktop--background" src="{{ actualImage() }}" alt="Imagen de propiedad" title="Imagen de la propiedad"/>
                 }
             </div>
-            <div class="carousel__container"
+            <div class="carousel__container flex-box"
                 [style.transform]="transformStyle()"
                 [style.width]="carouselContainerWidth"
                 [style.height]="carouselContainerHeight"
@@ -32,7 +32,7 @@
                 @for (item of allMedia(); track $index) {
                     @if(isVideo(item)){
                         <article
-                            class="carousel__item"
+                            class="carousel__item flex-box"
                             [style.width]="carouselItemWidth"
                             [style.height]="carouselItemHeight"
                             [ngClass]="{'active': isImageSelected($index)}"
@@ -62,13 +62,13 @@
                 }
             </div>
         </div>
-        <div class="carousel__controls">
+        <div class="carousel__controls flex-box">
             <i
                 (click)="prevImage()"
-                class="fa fa-solid fa-arrow-left"></i>
+                class="fa fa-solid fa-arrow-left flex-box"></i>
             <i
                 (click)="nextImage()"
-                class="fa fa-solid fa-arrow-right"></i>
+                class="fa fa-solid fa-arrow-right flex-box"></i>
         </div>
     </section>
 }
