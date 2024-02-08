@@ -53,7 +53,7 @@ export class ContactFormComponent {
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480">${this.email}</p>
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480">${this.phone}</p>
         <div style="background-color: #475838; text-align: center; padding: 10px;">
-          <img src="https://veritokillian.ar/assets/logos/logo-footer.png" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
+          <img src="https://veritokillian.ar/assets/logos/logo-footer.webp" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
         </div>
       </body>
       `,
@@ -71,7 +71,7 @@ export class ContactFormComponent {
         <h2 style="padding: 0 5%; font-size: 12px; color: #9D9480" >Tu consulta sobre ${this.subject} ya fue enviada</h2>
         <p style="padding: 0 5%; font-size: 12px; color: #9D9480" >Te estaremos contestando a la brevedad</p>
         <div style="background-color: #475838; text-align: center; padding: 10px;">
-          <img src="https://veritokillian.ar/assets/logos/logo-footer.png" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
+          <img src="https://veritokillian.ar/assets/logos/logo-footer.webp" alt="Logo Verónica Killian" style="width: 100px; height: auto;" />
         </div>
       </body>
       `,
