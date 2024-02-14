@@ -80,7 +80,7 @@ header .header-button.show::before{
 nav{
     height: 90vh;
     position: absolute;
-    top: 10vh;
+    top: 12vh;
     right: -100%;
     align-items: flex-start;
     z-index: 999;
@@ -92,7 +92,7 @@ ul{
     flex-direction: column;
     justify-content: flex-start;
     gap: 1.5rem;
-    padding: 5% 0%;
+    padding: 10% 0%;
 }
 nav.show{
     right: 0;
@@ -116,7 +116,7 @@ ul li a{
     text-decoration: none;
     color: var(--dark-color);
     font-size: 3rem;
-    font-weight: 500;
+    font-weight: 400;
     padding: 1px  0;
     transition: all 0.3s ease-in-out;
 }
