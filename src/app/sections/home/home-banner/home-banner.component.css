@@ -15,7 +15,7 @@
     border-radius: 2rem;
     height: 35vh;
     overflow: hidden;
-    padding: 5%;
+    padding: 6% 5%;
     gap: 1rem;
 }
 .banner article:last-child {
@@ -50,7 +50,7 @@
     color: var(--light-color);
     font-weight: 600;
     width: 80%;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .banner article a{
@@ -58,7 +58,9 @@
     color: var(--primary-color);
     background-color: var(--light-color);
     border: 1px solid var(--light-color);
-    padding: 1rem 2rem;
+    padding: 1rem 0rem;
+    width: 30%;
+    text-align: center;
     border-radius: 0.4rem;
     text-decoration: none;
     font-size: 1.5rem;

@@ -2,6 +2,7 @@
     position: relative;
     gap: 1rem;
     min-height: 40vh;
+    margin-top: 5rem;
 
 }
 .work .info{
@@ -11,25 +12,26 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 5%;
+    gap: 1rem;
 }
 
 .work p,
 .work h2{
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-color);
     z-index: 2;
 }
 
 .work p{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 
 .work img{
     width: auto;
-    height: 30vh;
+    height: 40vh;
     object-fit: contain;
 }
 

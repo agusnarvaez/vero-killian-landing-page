@@ -1,12 +1,12 @@
 .home-advices{
-    padding: 3%;
-    gap: 1rem;
+    padding: 5%;
+    gap: 2rem;
     justify-content: space-between;
 }
 .home-advices h2{
     width: 100%;
-    font-weight: 600;
-    font-size: 2rem;
+    font-weight: 700;
+    font-size: 2.5rem;
     color: var(--primary-color);
 }
 
@@ -58,8 +58,8 @@
 .home-advices article h3,
 .home-advices article p{
     z-index: 2;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 700;
     text-align: center;
 }
 .home-advices article p{
@@ -76,14 +76,16 @@
 .home-advices article .card-back{
     position: absolute;
     gap: 1rem;
+
     align-items: flex-start;
     justify-content: space-between;
     top:0;
     transform: rotateY(180deg);
     background-color: var(--primary-color);
+    padding: 10%;
 }
 .home-advices article .card-back h3{
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 .home-advices article .card-back p{
     font-size: 1.2rem;
@@ -99,16 +101,19 @@
     font-weight: 600;
     font-size: inherit;
 }
-
+.home-advices article .card-back .btn-double{
+    height: 4rem;
+}
 .home-advices article .card-back .btn-double a{
-    height: 3.5rem;
+    height: 4rem;
     color: var(--primary-color);
     background-color: var(--light-color);
     border-color: var(--light-color);
+    font-size: 1.3rem;
 }
 .home-advices article .card-back .btn-double .arrow-button{
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 4rem;
+    width: 4rem;
 }
 
 .home-advices article .card-back .btn-double a svg path{

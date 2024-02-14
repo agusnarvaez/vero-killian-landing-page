@@ -95,6 +95,7 @@ address{
     font-size: 1.3rem;
     font-weight: 400;
 }
+
 .bold{
     font-weight: 600;
     font-size: inherit;
@@ -161,7 +162,7 @@ a:hover{
 .btn-double{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     height: 5rem;
     width: 100%;
 }
