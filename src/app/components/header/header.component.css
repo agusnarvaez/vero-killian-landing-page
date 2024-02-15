@@ -161,8 +161,8 @@ nav ul li a.active{
 
     header.show,
     header{
-        height: 10vh;
-        padding: 0.5% 3%;
+        height: 12vh;
+        padding: 1.5% 3%;
     }
     header .header-logo img{
         width: auto;
@@ -201,9 +201,10 @@ nav ul li a.active{
     }
 
     ul li a{
-        font-size: 2rem;
+        font-size: 1.7rem;
         color: var(--tertiary-color-darker);
         padding: 0%;
+        font-weight: 300;
     }
 
 }
