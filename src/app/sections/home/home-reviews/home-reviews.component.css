@@ -86,16 +86,19 @@ section h2{
 
 
     @media (min-width: 530px) {
+        section{
+            padding: 4rem  4rem 7.5rem 4rem;
+        }
         section h2{
             width: 80%;
-            font-size: 3.5rem;
-            line-height: 4rem;
+            font-size: 2.5rem;
+            line-height: 3rem;
         }
         .carousel-inner{
             gap: 1.3rem;
         }
         .review-container {
-            width: 35vw;
+            width: 45vw;
             border-radius: 1.5rem;
         }
         .review-container > p{

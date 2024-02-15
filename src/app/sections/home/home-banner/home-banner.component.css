@@ -78,13 +78,14 @@
     .banner article{
         width: 49%;
         height: 40vh;
-        padding: 3%;
+        padding: 4%;
     }
     .banner article h2{
         font-size: 2.5rem;
     }
     .banner article a{
         font-size: 2rem;
+        width: 40%;
     }
 }
 

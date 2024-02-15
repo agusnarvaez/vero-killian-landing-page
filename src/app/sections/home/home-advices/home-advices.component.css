@@ -131,8 +131,11 @@
 
 
 @media (min-width: 530px) {
+    .home-advices{
+        padding: 4rem 4rem 7.5rem 4rem;
+    }
     .home-advices h2{
-        font-size: 2.3rem;
+        font-size: 2.5rem;
     }
     .home-advices article{
         width: 48%;
@@ -142,7 +145,16 @@
         font-size: 2.5rem;
     }
     .home-advices article p{
-        font-size: 2rem;
+        font-size: 1.7rem;
+    }
+    .home-advices article .card-back{
+        overflow-y: scroll;
+    }
+    .home-advices article .card-back {
+        gap: 2rem;
+    }
+    .home-advices article .card-back ul{
+        margin-bottom: 1rem;
     }
     .home-advices article .card-back ul li{
         font-size: 1.4rem;

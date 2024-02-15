@@ -97,9 +97,11 @@
     .faq-item .faq-question{
         padding: 2% 3%;
     }
-
+    .faq-item .icon{
+        justify-content: flex-end;
+    }
     .faq-item h3{
-        font-size: 2rem;
+        font-size: 1.7rem;
         line-height: 2.5rem;
     }
     .faq-item p{
@@ -107,9 +109,9 @@
         line-height: 2rem;
     }
     .faq-item i{
-        width: 3.5rem;
-        height: 3.5rem;
-        font-size: 1.3rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1rem;
     }
 
 }

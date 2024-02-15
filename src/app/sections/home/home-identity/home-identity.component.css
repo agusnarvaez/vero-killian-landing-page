@@ -46,7 +46,7 @@
     .home-identity{
         flex-direction: row;
         align-items: stretch;
-        min-height: 50vh;
+        min-height: 60vh;
         flex-wrap: nowrap;
     }
     .home-identity .info{
@@ -59,6 +59,7 @@
     }
     .home-identity .info p{
         font-size: 1.5rem;
+        margin-bottom: 3rem;
     }
 
     .home-identity .img{
