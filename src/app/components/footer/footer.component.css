@@ -114,7 +114,7 @@ footer section ul.social-icons{
         min-height: 40vh;
     }
     footer > img{
-        width: 15%;
+        width: 18%;
     }
     footer section.footer-primary{
         width: 80%;
@@ -132,6 +132,7 @@ footer section ul.social-icons{
         width: 100%;
         flex-direction: row;
         align-items: flex-end;
+        padding-bottom: 1%;
     }
     footer section.footer-secondary .social-icons{
         gap: 2rem;
