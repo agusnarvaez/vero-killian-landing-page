@@ -85,16 +85,20 @@ footer section ul.social-icons{
 
 
 @media (min-width: 530px) {
+    footer{
+        justify-content: space-between;
+        gap: 1rem;
+    }
     footer > img{
         width: 20%;
     }
     footer section ul li a{
         font-size: 2rem;
     }
-    footer .footer-secondary > img{
-        width: 15%;
-    }
 
+    footer .footer-secondary > img{
+        width: 12%;
+    }
 
 }
 
