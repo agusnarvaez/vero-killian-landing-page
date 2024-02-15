@@ -129,20 +129,21 @@ nav ul li a.active{
 @media (min-width: 530px) {
     header{
         height: 15vh;
+        padding: 3% 5%;
     }
     header .header-logo{
         width: 20%;
     }
 
     header .header-button{
-        width: 50px;
-        height: 40px;
+        width: 35px;
+        height: 20px;
     }
 
     header .header-button div,
     header .header-button::after,
     header .header-button::before{
-        height: 5px;
+        height: 3px;
     }
 
     nav{
