@@ -121,7 +121,7 @@ export class HomeReviewsComponent {
   carouselPosition() {
     if (window.innerWidth >= 950) {
       return `translateX(-${
-        100 * (this.actualIndex / (this.reviews.length * 1.3))
+        100 * (this.actualIndex / (this.reviews.length * 1.08))
       }%)`
     }
     if (window.innerWidth >= 530) {

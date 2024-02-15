@@ -91,8 +91,9 @@
 
 @media (min-width: 950px) {
     .banner article{
-        height: 50vh;
+        height: 55vh;
         gap: 2rem;
+        padding: 5%;
     }
     .banner article h2{
         font-size: 3rem;

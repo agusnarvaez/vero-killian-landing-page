@@ -124,16 +124,20 @@ section h2{
     }
 
     @media (min-width: 950px) {
+        section{
+            margin-top: 10rem;
+        }
         section h2{
             width: 60%;
-            font-size: 4rem;
-            line-height: 4.5rem;
+            font-size: 3rem;
+            line-height: 3.5rem;
         }
         .carousel-inner{
             gap: 1.5rem;
         }
         .review-container {
             border-radius: 2rem;
+            padding: 3rem;
         }
         .review-container > p{
             font-size: 2rem;

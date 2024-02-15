@@ -166,19 +166,23 @@
 
 @media (min-width: 930px) {
     .home-advices h2{
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     .home-advices article h3{
         font-size: 3rem;
     }
     .home-advices article p{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .home-advices article .card-back h3{
-        font-size: 1.7rem;
+        font-size: 3rem;
     }
     .home-advices article .card-back ul li{
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+    }
+    .home-advices article .card-back .btn-double a:first-child{
+        width: 40%;
+        font-size: 1.5rem;
     }
 }
 

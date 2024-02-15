@@ -70,13 +70,16 @@
 
 @media (min-width: 950px) {
     .home-identity{
-        min-height: 65vh;
+        min-height: 75vh;
     }
     .home-identity .info h2{
         font-size: 3rem;
     }
     .home-identity .info p{
         font-size: 2rem;
+    }
+    .home-identity .info .btn-double a:first-child{
+        padding: 0 9%;
     }
 }
 
