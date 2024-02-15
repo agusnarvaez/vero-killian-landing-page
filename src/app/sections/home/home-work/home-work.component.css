@@ -88,7 +88,8 @@
         min-height: 60vh;
     }
     .work h2{
-        font-size: 4rem;
+        font-size: 3.5rem;
+        line-height: 4rem;
     }
     .work p{
         font-size: 2rem;

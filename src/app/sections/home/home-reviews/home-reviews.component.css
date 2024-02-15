@@ -158,8 +158,8 @@ section h2{
     @media (min-width: 1100px) {
         section h2{
             width: 50%;
-            font-size: 4.5rem;
-            line-height: 5rem;
+            font-size: 3.5rem;
+            line-height: 4rem;
         }
         .carousel-inner{
             gap: 2rem;

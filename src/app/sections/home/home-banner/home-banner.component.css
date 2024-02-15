@@ -111,6 +111,11 @@
 @media (min-width: 1110px) {
     .banner article h2{
         font-size: 3.5rem;
+        /* line-height: 4rem; */
+    }
+    .banner article a{
+        padding: 1.5rem 0rem;
+        font-size: 2.5rem;
     }
     .banner article{
         height: 60vh;

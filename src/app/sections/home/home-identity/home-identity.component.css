@@ -85,6 +85,41 @@
 
 @media (min-width: 1110px) {
     .home-identity{
-        min-height: 80vh;
+        min-height: 90vh;
+    }
+    .home-identity .info h2{
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
+    .home-identity .info p{
+        font-size: 2.5rem;
+    }
+    .home-identity .info .btn-double {
+        height: 6.5rem;
+    }
+    .home-identity .info .btn-double a{
+        height: 6.5rem;
+        width: 6.5rem;
+    }
+  /*   .home-identity .info .btn-double a svg{
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    } */
+    .home-identity .info .btn-double a svg{
+        /* Ajusta la escala del SVG completo */
+        transform: scale(1.5); /* Ajusta este valor según sea necesario */
+        width: 4rem; /* Puedes ajustar este valor para cambiar el tamaño base del SVG */
+        height: 4rem; /* Ajusta este valor para cambiar el tamaño base del SVG */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .home-identity .info .btn-double a:first-child{
+        font-size: 2.5rem;
+        width: 40%;
     }
 }

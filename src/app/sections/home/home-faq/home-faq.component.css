@@ -34,9 +34,10 @@ app-faq-item{
         line-height: 3.5rem;
     }
 }
-/*
+
 @media (min-width: 1100px) {
-    .faq-section{
-        padding: 5% 20%;
+    .faq-section h2{
+        font-size: 3.5rem;
+        line-height: 4rem;
     }
-} */
+}
