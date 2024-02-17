@@ -110,7 +110,6 @@ footer section ul.social-icons{
         align-items: stretch;
         flex-wrap: wrap;
         padding: 2% 5%;
-        /* gap:0; */
         min-height: 40vh;
     }
     footer > img{
@@ -146,5 +145,24 @@ footer section ul.social-icons{
 }
 
 @media (min-width: 1100px) {
-
+    footer > img{
+        width: 15%;
+    }
+    footer section.footer-secondary {
+        padding: 0;
+    }
+    footer section.footer-primary ul li a,
+    footer section.footer-secondary ul li a{
+        font-size: 3rem;
+    }
+    footer section.footer-secondary .social-icons li{
+        padding: 0.5rem;
+    }
+    .social-icon i{
+        font-size: 3rem;
+    }
+    footer section.footer-secondary > img{
+        margin-top: 3rem;
+        width: 5%;
+    }
 }

@@ -139,6 +139,22 @@
     .faq-item p{
         font-size: 2rem;
         line-height: 2.5rem;
+    }
+}
 
+@media (min-width: 1110px) {
+    .faq-item h3{
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+    .faq-item p{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+
+    .faq-item i{
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.5rem;
     }
 }

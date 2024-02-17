@@ -1,13 +1,34 @@
+.btn-container{
+    justify-content: flex-end;
+}
 
+.btn-container .btn-double{
+    width: 60%;
+}
 
 @media (min-width: 530px) {
 
-
+    .btn-container .btn-double{
+        width: 80%;
+    }
+    .btn-container .btn-double span:first-child{
+        padding: 0 10%;
+    }
 }
 
 
 @media (min-width: 950px) {
-    
+    .btn-container .btn-double{
+        width: 50%;
+    }
+    .btn-container .btn-double span:first-child{
+        padding: 0 15%;
+    }
 
+}
 
+@media (min-width: 1250px) {
+    .btn-container .btn-double{
+        width: 40%;
+    }
 }

@@ -146,10 +146,12 @@ section app-button{
     object-fit: cover;
     border-radius: 50rem;
 }
+
 main form .btn-double *{
     font-weight: 600;
 
 }
+
 
 @media (min-width: 530px) {
     .sell-info h2{
@@ -179,9 +181,16 @@ main form .btn-double *{
     main form h2:last-of-type{
         margin-top: 3rem;
     }
-
+    main form .btn-container{
+        justify-content: flex-end;
+        width: 100%;
+    }
     main form .btn-double{
         margin-top: 2rem;
+        width: 40%;
+    }
+    main form .btn-double span:first-child{
+        padding: 0 10%;
     }
 }
 
@@ -220,12 +229,18 @@ main form .btn-double *{
 
     main form .btn-double{
         margin-top: 1rem;
+        width: 60%;
     }
+
+
 
 }
 
 @media (min-width: 1110px) {
     main form{
         padding: 2%;
+    }
+    main form .btn-double{
+        width: 40%;
     }
 }

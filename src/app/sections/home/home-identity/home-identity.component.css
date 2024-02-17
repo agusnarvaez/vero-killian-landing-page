@@ -78,18 +78,18 @@
     .home-identity .info p{
         font-size: 2rem;
     }
-    .home-identity .info .btn-double a:first-child{
+    .home-identity .info .btn-double span:first-child{
         padding: 0 9%;
     }
 }
 
 @media (min-width: 1110px) {
     .home-identity{
-        min-height: 90vh;
+        min-height: 110vh;
     }
     .home-identity .info h2{
-        font-size: 3.5rem;
-        line-height: 4rem;
+        font-size: 4rem;
+        line-height: 4.5rem;
     }
     .home-identity .info p{
         font-size: 2.5rem;
@@ -97,19 +97,13 @@
     .home-identity .info .btn-double {
         height: 6.5rem;
     }
-    .home-identity .info .btn-double a{
+    .home-identity .info .btn-double span{
         height: 6.5rem;
         width: 6.5rem;
     }
-  /*   .home-identity .info .btn-double a svg{
-        width: 4rem;
-        height: 4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
-    } */
-    .home-identity .info .btn-double a svg{
+
+    .home-identity .info .btn-double span svg{
         /* Ajusta la escala del SVG completo */
         transform: scale(1.5); /* Ajusta este valor según sea necesario */
         width: 4rem; /* Puedes ajustar este valor para cambiar el tamaño base del SVG */
@@ -118,8 +112,14 @@
         align-items: center;
         justify-content: center;
     }
-    .home-identity .info .btn-double a:first-child{
+    .home-identity .info .btn-double span:first-child{
         font-size: 2.5rem;
-        width: 40%;
+        width: 35%;
+        padding: 0 3%;
+    }
+
+
+    .home-identity .img{
+        border-top-right-radius: 20rem;
     }
 }

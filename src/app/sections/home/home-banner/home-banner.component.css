@@ -57,7 +57,7 @@
     z-index: 10;
     color: var(--primary-color);
     background-color: var(--light-color);
-    border: 1px solid var(--light-color);
+    /* border: 1px solid var(--light-color); */
     padding: 1rem 0rem;
     width: 30%;
     text-align: center;
@@ -110,8 +110,8 @@
 
 @media (min-width: 1110px) {
     .banner article h2{
-        font-size: 3.5rem;
-        /* line-height: 4rem; */
+        font-size: 4rem;
+        width: 70%;
     }
     .banner article a{
         padding: 1.5rem 0rem;
@@ -119,5 +119,9 @@
     }
     .banner article{
         height: 60vh;
+        padding: 5% 5%;
+    }
+    .banner article a{
+        width: 30%;
     }
 }

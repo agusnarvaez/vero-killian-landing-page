@@ -162,7 +162,7 @@ nav ul li a.active{
     header.show,
     header{
         height: 12vh;
-        padding: 1.5% 3%;
+        padding: 1.2% 3%;
     }
     header .header-logo img{
         width: auto;

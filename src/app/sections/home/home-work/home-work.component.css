@@ -85,13 +85,13 @@
 
 @media (min-width: 1110px) {
     .work{
-        min-height: 60vh;
+        min-height: 70vh;
     }
     .work h2{
-        font-size: 3.5rem;
+        font-size: 4rem;
         line-height: 4rem;
     }
     .work p{
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }

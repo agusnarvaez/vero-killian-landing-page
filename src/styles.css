@@ -165,8 +165,14 @@ a:hover{
     gap: 0.5rem;
     height: 5rem;
     width: 100%;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
 }
-.btn-double a,
+.btn-double:hover{
+    text-decoration: none;
+}
+.btn-double span,
 .btn-double button{
     display: flex;
     height: 5rem;
@@ -182,7 +188,7 @@ a:hover{
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-.btn-double a.arrow-button,
+.btn-double span.arrow-button,
 .btn-double button.arrow-button {
     width: 5rem;
     height: 5rem;
@@ -191,25 +197,26 @@ a:hover{
     justify-content: center;
     align-items: center;
 }
-.btn-double .arrow-button:hover svg path{
+.btn-double:hover .arrow-button svg path{
     transition: all 0.3 ease-in-out;
 }
 
 
 
-.btn-double a:hover,
-.btn-double button:hover{
+.btn-double:hover span,
+.btn-double:hover button{
     background-color: var(--light-color);
     color: var(--primary-color);
+    text-decoration: none !important;
 }
-.btn-double .arrow-button:hover svg path,
-.btn-double a:hover svg path
-.btn-double button:hover svg path{
+.btn-double:hover .arrow-button svg path,
+.btn-double:hover span svg path
+.btn-double:hover button svg path{
     fill: var(--primary-color);
 }
 
-.btn-double a:active
-.btn-double button:active{
+.btn-double:active span
+.btn-double:active button{
     transform: scale(0.9);
 }
 
@@ -404,7 +411,7 @@ form .contact-errors *{
         font-size: 2rem;
         line-height: 2.5rem;
     }
-    .btn-double a,
+    .btn-double span,
     .btn-double button{
         padding: 0% 5%;
     }
