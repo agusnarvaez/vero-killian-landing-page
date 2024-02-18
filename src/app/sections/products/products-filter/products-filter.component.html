@@ -12,17 +12,20 @@
             [(ngModel)]="neighborhood"
             />
     </div>
-    <button type="button"
-        (click)="toggleFilters()"
-    class="filter-button"><i class=" fa fa-filter fa-solid"></i>
-    @if(showFilters){ Menos} @else { Más}
-    Filtros</button>
-    <button type="button"
-        (click)="clearFilters()"
-        class="reset-btn">
-        <i class="fa fa-solid fa-arrow-rotate-right"></i>
-    </button>
-    <button type="submit" class="search-btn fa fa-search fa-solid fa-magnifying-glass"></button>
+    <div class="main-buttons flex-box">
+        <button type="button"
+            (click)="toggleFilters()"
+            class="filter-button"><i class=" fa fa-filter fa-solid"></i>
+            @if(showFilters){ Menos} @else { Más}
+            Filtros
+        </button>
+        <button type="button"
+            (click)="clearFilters()"
+            class="reset-btn">
+            <i class="fa fa-solid fa-arrow-rotate-right"></i>
+        </button>
+        <button type="submit" class="search-btn fa fa-search fa-solid fa-magnifying-glass"></button>
+    </div>
     <div class="input-container">
         <label for="typeFilter">Tipo</label>
         <select
