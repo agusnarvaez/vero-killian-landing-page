@@ -143,6 +143,9 @@
     section{
         padding: 3% 15%;
     }
+    .filter-form{
+        max-height: 13rem;
+    }
     form.filter-form .input-container{
         width: 25% !important;
     }
