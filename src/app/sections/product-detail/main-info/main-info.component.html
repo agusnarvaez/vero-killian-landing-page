@@ -9,8 +9,12 @@
         <li><i class="fa fa-solid fa-square-parking"></i>{{product?.garage==0?"Sin cochera":product?.garage + " Cochera"}}</li>
         <li><i class="fa fa-solid fa-bath"></i>{{product?.bathrooms}} Baño</li>
     </ul>
-    <h2>Descripción</h2>
-    <p class="description" [innerHTML]="product?.description"></p>
+    @if (
+        product?.description
+    ) {
+        <h2>Descripción</h2>
+        <p class="description" [innerHTML]="product?.description"></p>
+    }
 
     <h2>Ubicación</h2>
     <div class="product-map" *ngIf="product">

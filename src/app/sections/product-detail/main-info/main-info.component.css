@@ -13,7 +13,7 @@ section > span{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 1rem;
     color: var(--primary-color);
     font-weight: 500;
@@ -25,6 +25,7 @@ section h1,
 section h2{
     font-size: 2rem;
     font-weight: 800;
+    color: var(--primary-color);
 }
 section h2{
     font-weight: 700;
@@ -42,6 +43,7 @@ section ul{
 }
 section ul li{
     width: 45%;
+    color: var(--primary-color);
 
 }
 section ul li i{

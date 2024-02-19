@@ -20,7 +20,11 @@ main{
     border: 1px solid var(--secondary-color);
     padding: 2rem;
     border-radius: 2rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
 }
+
 .main-info app-contact-card{
     width: 100%;
 }
