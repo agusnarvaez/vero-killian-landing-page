@@ -110,17 +110,20 @@
 
         <div class="input-container">
             <label for="type">Tipo de propiedad</label>
-            <select
-                id="type"
-                name="type"
-                [(ngModel)]="type"
-                required
-                #typeField="ngModel">
-                <option value="" disabled selected>Seleccione un tipo</option>
-                <option value="Casa">Casa</option>
-                <option value="Departamento">Departamento</option>
-                <option value="PH">PH</option>
-            </select>
+            <div class="select-container">
+                <select
+                    id="type"
+                    name="type"
+                    [(ngModel)]="type"
+                    required
+                    #typeField="ngModel">
+                    <option value="" disabled selected>Seleccione un tipo</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Departamento">Departamento</option>
+                    <option value="PH">PH</option>
+                </select>
+                <i class="fas fa-chevron-down"></i>
+            </div>
             <div class="contact-errors" *ngIf="typeField.invalid && (typeField.dirty || typeField.touched)">
                 <small *ngIf="typeField.errors?.['required']">Debes seleccionar un tipo.</small>
             </div>
@@ -128,16 +131,19 @@
 
         <div class="input-container">
             <label for="isRecycled">¿Es reciclada?</label>
-            <select
-                id="isRecycled"
-                name="isRecycled"
-                [(ngModel)]="isRecycled"
-                required
-                #isRecycledField="ngModel">
-                <option value="" disabled selected>Seleccione su respuesta</option>
-                <option value="true">Sí</option>
-                <option value="false">No</option>
-            </select>
+            <div class="select-container">
+                <select
+                    id="isRecycled"
+                    name="isRecycled"
+                    [(ngModel)]="isRecycled"
+                    required
+                    #isRecycledField="ngModel">
+                    <option value="" disabled selected>Seleccione su respuesta</option>
+                    <option value="true">Sí</option>
+                    <option value="false">No</option>
+                </select>
+                <i class="fas fa-chevron-down"></i>
+            </div>
             <div class="contact-errors" *ngIf="isRecycledField.invalid && (isRecycledField.dirty || isRecycledField.touched)">
                 <small *ngIf="isRecycledField.errors?.['required']">Debes seleccionar un tipo.</small>
             </div>
