@@ -4,7 +4,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 0% 5% 5% 5%;
+    padding: 5% 5% 5% 5%;
     gap: 3rem;
     position: relative;
     min-height: 90vh;
@@ -49,7 +49,7 @@ main::after{
     text-align: start;
 }
 .sell-info p{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 300;
     text-align: start;
 }
@@ -61,12 +61,18 @@ main::after{
     flex-wrap: wrap;
     gap: 2rem;
 }
+.sell-info header p{
+    width: 80%;
+}
 .sell-info .links{
     width: 100%;
     display: flex;
     gap: 1rem;
     flex-direction: column;
     align-items: flex-start;
+}
+.sell-info .links h2{
+    margin-bottom: 1rem;
 }
 .sell-info .faq-link{
     border-radius: 3rem;
@@ -81,6 +87,16 @@ main::after{
     gap: 1rem;
     text-decoration: none;
 }
+
+.sell-info .faq-link.bg-white{
+    background: var(--light-color);
+    color: var(--primary-color);
+}
+.sell-info .faq-link.bg-white:hover{
+    color: var(--light-color);
+    background-color: var(--primary-color);
+}
+
 .sell-info .faq-link:hover,
 .sell-info .faq-link:active{
     color: var(--primary-color);
@@ -108,7 +124,7 @@ form h2{
 }
 main form .input-container label{
     text-align: start;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
@@ -148,7 +164,7 @@ section app-button{
 }
 
 main form .btn-double *{
-    font-weight: 600;
+    font-weight: 500;
 
 }
 
