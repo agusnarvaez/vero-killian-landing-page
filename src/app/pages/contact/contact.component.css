@@ -15,6 +15,7 @@ main section h1{
     font-size: 2rem;
     line-height: 3rem;
     font-weight: 600;
+    margin-bottom: 2rem;
     color: var(--primary-color);
 }
 
@@ -35,7 +36,6 @@ h2{
 
 app-contact-form{
     width: 100%;
-
 }
 
 
