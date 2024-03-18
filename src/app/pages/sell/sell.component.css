@@ -131,8 +131,6 @@ form h2{
 }
 main form .input-container label{
     text-align: start;
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
 }
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
@@ -205,7 +203,6 @@ main form .btn-double *{
 
     main form .input-container{
         width: 47%;
-        gap: 0;
     }
 
     main form h2:last-of-type{

@@ -269,6 +269,23 @@ form .input-container label{
     transition: all 0.3s ease-in-out;
 }
 
+form .input-container .select-container{
+    position: relative;
+    padding: 0;
+    width: 100%;
+}
+form .input-container .select-container select{
+    height: 100%;
+    -webkit-appearance: none; /* Remueve la flecha predeterminada en WebKit */
+    -moz-appearance: none;    /* Remueve la flecha predeterminada en Firefox */
+    appearance: none;
+}
+form .input-container .select-container i{
+    position: absolute;
+    right: 1.5rem; /* Ajusta esto para mover la flecha hacia la izquierda */
+    top: 50%;
+    transform: translateY(-50%);
+}
 form .input-container select:focus-within,
 form .input-container textarea:focus-within,
 form .input-container input:focus-within{
@@ -282,11 +299,23 @@ form .input-container:focus-within label{
 form .btn-double{
     justify-content: flex-end;
 }
+form .contact-errors{
+    position: absolute;
+    height: 2rem;
+    bottom: -2rem;
+    left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 form .contact-errors *{
     color: var(--danger-color);
+    width: 100%;
     font-size: 1.3rem;
-    font-weight: 600;
-    text-align: center;
+    font-weight: 500;
+    text-align: start;
 }
 
 /* Estilos específicos para el modo oscuro */
@@ -420,9 +449,6 @@ form .contact-errors *{
     form{
         gap: 2rem;
     }
-    form .btn-double{
-        height: 9rem;
-    }
 
     form .input-container textarea,
     form .input-container select,
@@ -432,7 +458,7 @@ form .contact-errors *{
     }
 
     form .input-container label{
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 }
 

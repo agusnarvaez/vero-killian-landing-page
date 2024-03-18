@@ -28,15 +28,18 @@
     </div>
     <div class="input-container">
         <label for="typeFilter">Tipo</label>
-        <select
-            id="typeFilter"
-            name="type"
-            [(ngModel)]="type"
-        >
-            <option value="" disabled selected>Tipo de propiedad</option>
-            <option value="Departamento">Departamento</option>
-            <option value="Casa">Casa</option>
-        </select>
+        <div class="select-container">
+            <select
+                id="typeFilter"
+                name="type"
+                [(ngModel)]="type"
+                >
+                <option value="" disabled selected>Tipo de propiedad</option>
+                <option value="Departamento">Departamento</option>
+                <option value="Casa">Casa</option>
+            </select>
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </div>
     <div class="input-container">
         <label for="roomsFilter">Habitaciones</label>

@@ -51,19 +51,22 @@
 
     <div class="input-container" *ngIf="showSubject">
         <label for="contactSubject">Categoría de la consulta</label>
-        <select
-            id="contactSubject"
-            name="subject"
-            [(ngModel)]="subject"
-            required
-            #subjectField="ngModel">
-            <option value="" disabled selected>Seleccione un motivo</option>
-            <option value="Consulta General">Consulta general</option>
-            <option value="Atencion al cliente">Atención al cliente</option>
-            <option value="Comprar">Quiero comprar</option>
-            <option value="Vender">Quiero vender</option>
-            <option value="Alquilar">Quiero alquilar</option>
-        </select>
+        <div class="select-container">
+            <select
+                id="contactSubject"
+                name="subject"
+                [(ngModel)]="subject"
+                required
+                #subjectField="ngModel">
+                <option value="" disabled selected>Seleccione un motivo</option>
+                <option value="Consulta General">Consulta general</option>
+                <option value="Atencion al cliente">Atención al cliente</option>
+                <option value="Comprar">Quiero comprar</option>
+                <option value="Vender">Quiero vender</option>
+                <option value="Alquilar">Quiero alquilar</option>
+            </select>
+            <i class="fas fa-chevron-down"></i>
+        </div>
         <div class="contact-errors" *ngIf="subjectField.invalid && (subjectField.dirty || subjectField.touched)">
             <small *ngIf="subjectField.errors?.['required']">Debes seleccionar un motivo.</small>
         </div>
