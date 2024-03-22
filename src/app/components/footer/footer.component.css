@@ -9,7 +9,16 @@ footer{
     padding: 5% 10%;
     gap: 2rem;
 }
-footer > img{
+footer .footer-logo{
+    flex-direction: column;
+    gap: 1rem;
+}
+footer .footer-logo h2{
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--light-color);
+}
+footer .footer-logo > img{
     width: 45%;
     object-fit: contain;
 }
@@ -89,9 +98,13 @@ footer section ul.social-icons{
         justify-content: space-between;
         gap: 1rem;
     }
-    footer > img{
+    footer .footer-logo{
+        width: 100%;
+    }
+    footer .footer-logo img{
         width: 20%;
     }
+
     footer section ul li a{
         font-size: 2rem;
     }
@@ -112,11 +125,15 @@ footer section ul.social-icons{
         padding: 2% 5%;
         min-height: 40vh;
     }
-    footer > img{
-        width: 18%;
+    footer .footer-logo img{
+        width: 100%;
     }
+    footer .footer-logo{
+        width: 25%;
+    }
+
     footer section.footer-primary{
-        width: 80%;
+        width: 70%;
         align-items: flex-end;
     }
     footer section.footer-primary ul{
