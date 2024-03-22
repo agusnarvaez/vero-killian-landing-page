@@ -196,9 +196,9 @@
         line-height: 4.5rem;
         margin-bottom: 3rem;
     }
-    .home-advices article{
+    /* .home-advices article{
         aspect-ratio: 4/3;
-    }
+    } */
 
     .home-advices article h3{
         font-size: 4rem;
@@ -210,17 +210,17 @@
         overflow-y: hidden;
     }
     .home-advices article .card-back h3{
-        font-size: 4rem;
+        font-size: 3rem;
     }
     .home-advices article .card-back ul li{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .home-advices article .card-back .btn-double {
-        height: 6rem;
+        height: 5rem;
     }
     .home-advices article .card-back .btn-double span{
-        height: 6rem;
-        font-size: 2.5rem;
+        height: 5rem;
+        font-size: 2rem;
     }
     .home-advices article .card-back .btn-double span:first-child{
         width: 30%;
