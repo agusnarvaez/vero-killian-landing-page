@@ -12,8 +12,8 @@
 
 .home-advices article{
     width: 100%;
-    height: auto;
-    aspect-ratio: 1/1;
+    height: 70vh;
+    /* aspect-ratio: 1/1; */
     perspective: 1000px; /* Crea la perspectiva 3D */
     color: var(--light-color);
 }
@@ -55,12 +55,20 @@
     backface-visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
+.home-advices article .card-back main{
+    width: 100%;
+    min-height: auto;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
 .home-advices article h3,
 .home-advices article p{
     z-index: 2;
     font-size: 2.5rem;
     font-weight: 700;
-    text-align: center;
+    text-align: start;
 }
 .home-advices article p{
     font-weight: 400;
@@ -85,10 +93,12 @@
     padding: 10%;
 }
 .home-advices article .card-back h3{
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 .home-advices article .card-back p{
     font-size: 1.2rem;
+    text-align: start;
+    width: 100%;
 }
 .home-advices article .card-back ul{
     padding: 0 0% 0 5%;
@@ -153,6 +163,7 @@
     .home-advices article .card-back {
         gap: 2rem;
     }
+
     .home-advices article .card-back ul{
         margin-bottom: 1rem;
     }
@@ -181,6 +192,9 @@
     .home-advices article .card-back h3{
         font-size: 3rem;
     }
+    .home-advices article .card-back main p{
+        font-size: 1.5rem;
+    }
     .home-advices article .card-back ul li{
         font-size: 1.5rem;
     }
@@ -206,6 +220,7 @@
     .home-advices article p{
         font-size: 3rem;
     }
+
     .home-advices article .card-back{
         overflow-y: hidden;
     }
@@ -214,6 +229,9 @@
     }
     .home-advices article .card-back ul li{
         font-size: 2rem;
+    }
+    .home-advices article .card-back main p{
+        font-size: 1.7rem;
     }
     .home-advices article .card-back .btn-double {
         height: 5rem;
@@ -224,11 +242,11 @@
     }
     .home-advices article .card-back .btn-double span:first-child{
         width: 30%;
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
     .home-advices article .card-back .btn-double .arrow-button{
-        height: 6rem;
-        width: 6rem;
+        height: 5rem;
+        width: 5rem;
     }
     .home-advices article .card-back .btn-double .arrow-button svg{
         width: 3rem;
