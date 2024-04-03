@@ -70,6 +70,7 @@
     width: 100%;
     transition: all 0.3s ease-in-out;
 }
+.faq-item.show p *,
 .faq-item.show p > a{
     font-size: inherit;
 }
