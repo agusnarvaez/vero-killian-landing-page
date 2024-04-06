@@ -1,5 +1,5 @@
 @if (noImages()) {
-    <div class="no-images flex-box">
+    <div class="no-images">
         <p>
             No se encuentran imágenes o videos para mostrar
         </p>
@@ -7,7 +7,7 @@
 }
 @else {
     <section>
-        <div class="carousel flex-box">
+        <div class="carousel">
             <div class="main-image_desktop">
                 @if(isVideo(actualImage())){
                     <!-- Youtube player -->
@@ -20,11 +20,18 @@
                     allowfullscreen></iframe>
                 }
                 @else {
-                    <img class="main-image_desktop--principal" src="{{ actualImage() }}" alt="Imagen de propiedad" title="Imagen de la propiedad"/>
-                    <img class="main-image_desktop--background" src="{{ actualImage() }}" alt="Imagen de propiedad" title="Imagen de la propiedad"/>
+                    @if(isRender(actualImage())){
+                        <a class="tour-view-container" [href]="actualImage()" target="_blank" rel="noreferrer">
+                            <img class="main-image_desktop--principal" src="../../../../assets/icons/360-view.png" alt="Imagen de propiedad" title="Imagen de la propiedad"/>
+                            <h3>Haz click para realizar un tour 360°</h3>
+                        </a>
+                    }@else {
+                        <img class="main-image_desktop--principal" src="{{ actualImage() }}" alt="Imagen de propiedad" title="Imagen de la propiedad"/>
+                        <img class="main-image_desktop--background" src="{{ actualImage() }}" alt="Imagen de propiedad" title="Imagen de la propiedad"/>
+                    }
                 }
             </div>
-            <div class="carousel__container flex-box"
+            <div class="carousel__container"
                 [style.transform]="transformStyle()"
                 [style.width]="carouselContainerWidth"
                 [style.height]="carouselContainerHeight"
@@ -32,7 +39,7 @@
                 @for (item of allMedia(); track $index) {
                     @if(isVideo(item)){
                         <article
-                            class="carousel__item flex-box"
+                            class="carousel__item"
                             [style.width]="carouselItemWidth"
                             [style.height]="carouselItemHeight"
                             [ngClass]="{'active': isImageSelected($index)}"
@@ -40,7 +47,7 @@
                             >
                                 <!-- Mostrar la imagen de stock de YouTube -->
                                 <img
-                                    src="https://img.youtube.com/vi/{{ getYoutubeVideoId(item) }}/0.webp"
+                                    src="https://img.youtube.com/vi/{{ getYoutubeVideoId(item) }}/0.jpg"
                                     alt="Miniatura del video"
                                     title="Video de la propiedad"/>
                         </article>
@@ -53,22 +60,37 @@
                             [ngClass]="{'active': isImageSelected($index)}"
                             (click)="selectImage($index)"
                             >
+                            @if(isRender(item)){
+                                <!-- Render -->
+                                <a class="tour-view-container" [href]="actualImage()" target="_blank" rel="noreferrer">
+                                    <img src="../../../../assets/icons/360-view.png" alt="Imagen de propiedad" title="Imagen de la propiedad"/>
+                                    <h3>Haz click para realizar un tour 360°</h3>
+                                </a>
+                                <div class="tour-view-container_desktop"  target="_blank" rel="noreferrer">
+                                    <img src="../../../../assets/icons/360-view.png" alt="Imagen de propiedad" title="Imagen de la propiedad"/>
+                                </div>
+                            }@else {
                                 <img
                                     src="{{ item }}"
-                                    alt="Imagen de propiedad"
+                                    alt="Imagen de propiedaad"
                                     title="Imagen de la propiedad"/>
+                            }
                         </article>
                     }
                 }
             </div>
         </div>
-        <div class="carousel__controls flex-box">
-            <i
+        <div class="carousel__controls">
+            <app-button
                 (click)="prevImage()"
-                class="fa fa-solid fa-arrow-left flex-box"></i>
-            <i
+                type="secondary"
+                [rounded]="true"
+                icon="fa fa-solid fa-chevron-left"></app-button>
+            <app-button
+                [rounded]="true"
                 (click)="nextImage()"
-                class="fa fa-solid fa-arrow-right flex-box"></i>
+                type="secondary"
+                icon="fa fa-solid fa-chevron-right"></app-button>
         </div>
     </section>
 }
