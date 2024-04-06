@@ -3,11 +3,16 @@
         <img [src]="product?.cover" alt="Imagen principal">
         <section>
             <main class="main-info">
-                <h2>{{product?.type}} en {{product?.address?.street}} {{product?.address?.city}}</h2>
-                <h3><span class="bold">{{product?.area}}</span> m2 totales</h3>
-                <h3><span class="bold">{{product?.coveredArea}}</span> m2 cubiertos</h3>
-                <h3><span class="bold">{{product?.rooms}}</span> ambientes</h3>
-                <h3><span class="bold">{{product?.bathrooms}}</span> baños</h3>
+                <h2>{{product?.address?.street}}</h2>
+                <h3>{{product?.address?.city}}</h3>
+                <ul>
+                    <li><i class="fa fa-solid fa-maximize"></i><span class="bold">{{product?.area}}</span> m2 totales</li>
+                    <li><i class="fa fa-solid fa-person-shelter"></i><span class="bold">{{product?.coveredArea}}</span> m2 cubiertos</li>
+                    <li><i class="fa fa-solid fa-house-chimney-window"></i><span class="bold">{{product?.rooms}}</span> ambientes</li>
+                    <li><i class="fa fa-solid fa-square-parking"></i><span class="bold"> {{product?.garage}}</span> Cochera</li>
+                    <li><i class="fa fa-solid fa-bath"></i><span class="bold">{{product?.bathrooms}}</span> baños</li>
+                </ul>
+                <h4>{{product?.operation_type}} {{product?.type}} en la zona de {{product?.address?.city}}</h4>
             </main>
             <footer>
                 <h2 class="price"><span class="bold">{{product?.currency}} {{product?.price}}</span></h2>

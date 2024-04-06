@@ -5,11 +5,11 @@
     align-items: stretch;
     flex-wrap: wrap;
     border-radius: 1rem;
-    box-shadow: 0px 4px 26px 0px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 .product-card:hover{
+    box-shadow: 0px 4px 26px 0px rgba(0, 0, 0, 0.25);
     transform: scale(1.01);
 }
 .product-card > a{
@@ -52,28 +52,55 @@
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: row;
-    row-gap: 2rem;
+    row-gap: 1.5rem;
 }
 .product-card section footer {
     align-items: center;
     display: flex;
 }
-.product-card section h2{
+.product-card section h2,
+.product-card section h4{
     width: 100%;
     color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.8rem;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 3rem;
 }
 .product-card section footer .price{
     width: 45%;
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 .product-card section h3{
     width: 45%;
+    opacity: 0.7;
+    font-size: 2rem;
+    font-weight: 500;
 }
-.product-card section main h3 svg{
-    width: 4rem;
-    height: 4rem;
+.product-card section h4{
+    font-size: 1.8rem;
 }
+.product-card section .main-info ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 0.5rem;
+}
+.product-card section .main-info ul li,
+.product-card section .main-info ul li *{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.product-card section .main-info ul li i{
+    font-size: 1.6rem;
+    margin-right: 0.5rem;
+}
+
 
 .product-card-icon-button{
     width: 35%;
@@ -82,11 +109,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 2rem;
+    border-radius: 50rem;
     cursor: pointer;
     color: var(--primary-color);
     justify-self: flex-end;
     padding: 2% 5%;
+    font-weight: 600;
 }
 .product-card-icon-button-img{
     width: 20px;
@@ -119,12 +147,16 @@
         border-top-right-radius: 2rem;
         border-bottom-right-radius: 2rem;
     }
+    .product-card-icon-button{
+        width: 30%;
+        font-size: 2rem;
+    }
     .product-card:hover .product-card-icon-button{
         transition: all 0.3s ease-in-out;
-        background-color: var(--secondary-color);
+        background-color: var(--primary-color);
+        color: var(--light-color);
     }
     .product-card:hover  .product-card-icon-button .product-card-icon-button-img path{
-        /* stroke: var(--primary-color); */
         fill: var(--primary-color);
         transition: all 0.3s ease-in-out;
     }
@@ -137,8 +169,6 @@
     .product-card h3{
         font-size: 1.3rem;
     }
-    /* .product-card img{
-        min-height: 250px;
-    } */
+
 
 }
