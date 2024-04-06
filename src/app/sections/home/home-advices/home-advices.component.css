@@ -13,7 +13,6 @@
 .home-advices article{
     width: 100%;
     height: 70vh;
-    /* aspect-ratio: 1/1; */
     perspective: 1000px; /* Crea la perspectiva 3D */
     color: var(--light-color);
 }
@@ -100,17 +99,7 @@
     text-align: start;
     width: 100%;
 }
-.home-advices article .card-back ul{
-    padding: 0 0% 0 5%;
-}
-.home-advices article .card-back ul li{
-    list-style: circle;
-    font-size: 1.2rem;
-}
-.home-advices article .card-back ul li span{
-    font-weight: 600;
-    font-size: inherit;
-}
+
 .home-advices article .card-back .btn-double{
     height: 4rem;
 }
@@ -164,15 +153,6 @@
         gap: 2rem;
     }
 
-    .home-advices article .card-back ul{
-        margin-bottom: 1rem;
-    }
-    .home-advices article .card-back ul li{
-        font-size: 1.4rem;
-    }
-
-
-
 }
 
 @media (min-width: 930px) {
@@ -195,9 +175,7 @@
     .home-advices article .card-back main p{
         font-size: 1.5rem;
     }
-    .home-advices article .card-back ul li{
-        font-size: 1.5rem;
-    }
+
     .home-advices article .card-back .btn-double span:first-child{
         width: 40%;
         font-size: 1.5rem;
@@ -210,9 +188,6 @@
         line-height: 4.5rem;
         margin-bottom: 3rem;
     }
-    /* .home-advices article{
-        aspect-ratio: 4/3;
-    } */
 
     .home-advices article h3{
         font-size: 4rem;
@@ -227,9 +202,7 @@
     .home-advices article .card-back h3{
         font-size: 3rem;
     }
-    .home-advices article .card-back ul li{
-        font-size: 2rem;
-    }
+
     .home-advices article .card-back p{
         font-size: 1.7rem;
     }
