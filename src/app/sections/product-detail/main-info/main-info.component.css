@@ -6,8 +6,22 @@ section{
     align-items: stretch;
     gap: 1rem;
 }
+section header {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
 
-section > span{
+section header div{
+    width: 100%;
+}
+.header-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+section header div > span{
     width: 30%;
     max-width: 100px;
     display: flex;
@@ -20,9 +34,25 @@ section > span{
     /* box-shadow: 0px 4px 26px 0px rgba(0, 0, 0, 0.25); */
     border: 1px solid var(--primary-color);
 }
-
-section h1,
+section header .title-separator{
+    width: 0.1rem;
+    height: 6rem;
+    background-color: var(--primary-color);
+    border: 0.3px solid var(--primary-color);
+    opacity: 0.7;
+    margin: 0 1rem;
+    display: inline-block;
+}
+section h1{
+    width: 100%;
+}
 section h2{
+    width: fit-content;
+    min-width: 30%;
+}
+section h1,
+section h2
+{
     font-size: 2rem;
     font-weight: 800;
     color: var(--primary-color);

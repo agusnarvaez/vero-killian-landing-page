@@ -1,34 +1,43 @@
 <section>
-    <span>{{product?.operation_type}}</span>
-    <h1>{{product?.title}}</h1>
-    <h2>{{product?.currency + " " + product?.price}}</h2>
-    <ul>
-        <li><i class="fa fa-solid fa-house-chimney-window"></i> {{product?.rooms}} ambientes</li>
-        <li><i class="fa fa-solid fa-maximize"></i> {{product?.area}} m2</li>
-        <li><i class="fa fa-solid fa-person-shelter"></i>{{product?.coveredArea}} m2</li>
-        <li><i class="fa fa-solid fa-square-parking"></i>{{product?.garage==0?"Sin cochera":product?.garage + " Cochera"}}</li>
-        <li><i class="fa fa-solid fa-bath"></i>{{product?.bathrooms}} Baño</li>
-    </ul>
+    <header>
+        <div class="">
+            <span>{{product?.operation_type}}</span>
+        </div>
+        <div class="header-title">
+            <h1>{{product?.address?.street}} <span class="title-separator"></span> {{product?.currency + " " + product?.price}}</h1>
+        </div>
+    </header>
+    <section>
+        <ul>
+            <li><i class="fa fa-solid fa-house-chimney-window"></i> {{product?.rooms}} ambientes</li>
+            <li><i class="fa fa-solid fa-maximize"></i> {{product?.area}} m2</li>
+            <li><i class="fa fa-solid fa-person-shelter"></i>{{product?.coveredArea}} m2</li>
+            <li><i class="fa fa-solid fa-square-parking"></i>{{product?.garage==0?"Sin cochera":product?.garage + " Cochera"}}</li>
+            <li><i class="fa fa-solid fa-bath"></i>{{product?.bathrooms}} Baño</li>
+        </ul>
+    </section>
     @if (
         product?.description
     ) {
-        <h2>Descripción</h2>
-        <p class="description" [innerHTML]="product?.description"></p>
+        <section class="description-wrapper">
+            <h2>Descripción</h2>
+            <p class="description" [innerHTML]="product?.description"></p>
+        </section>
     }
-
-    <h2>Ubicación</h2>
-    <div class="product-map" *ngIf="product">
-        <google-map
-            height="300px"
-            width="100%"
-            [center]="center"
-            [zoom]="15">
-            <map-marker
-                *ngIf="product?.geo_lat && product?.geo_long"
-                [position]="marker.position ?? center"
-                [title]="marker.title ?? ''">
-            </map-marker>
-        </google-map>
-    </div>
-
+    <section class="location-wrapper">
+        <h2>Ubicación</h2>
+        <div class="product-map" *ngIf="product">
+            <google-map
+                height="300px"
+                width="100%"
+                [center]="center"
+                [zoom]="15">
+                <map-marker
+                    *ngIf="product?.geo_lat && product?.geo_long"
+                    [position]="marker.position ?? center"
+                    [title]="marker.title ?? ''">
+                </map-marker>
+            </google-map>
+        </div>
+    </section>
 </section>
