@@ -5,11 +5,12 @@ import { Meta, Title } from '@angular/platform-browser'
 import { EmailService } from '../../services/email/email.service'
 import { FormsModule, NgForm } from '@angular/forms'
 import { Mail } from '../../models/mail'
+import { Router, RouterModule } from '@angular/router'
 
 @Component({
   selector: 'app-sell',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, FormsModule],
+  imports: [CommonModule, ButtonComponent, FormsModule, RouterModule],
   templateUrl: './sell.component.html',
   styleUrl: './sell.component.css',
 })
@@ -51,6 +52,7 @@ export class SellComponent {
     private metaTagService: Meta,
     private titleService: Title,
     public emailService: EmailService,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -186,5 +188,13 @@ export class SellComponent {
 
     alert('Mensaje enviado correctamente')
     this.myForm.reset()
+  }
+
+  goToFaq() {
+    this.router.navigate(['/preguntas-frecuentes'])
+  }
+
+  goToContact() {
+    this.router.navigate(['/contacto'])
   }
 }

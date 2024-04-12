@@ -9,9 +9,13 @@
         </header>
         <div class="links">
             <h2>¿Necesitás mas información?</h2>
-            <a class="faq-link bg-white"  ><i class="fa fa-solid fa-link"></i> ¿Qué necesito para vender una propiedad?</a>
+            <a class="faq-link bg-white" (click)="goToFaq()" >¿Qué necesito para vender una propiedad?</a>
             <a class="faq-link" href="https://infogram.com/010-precio-del-m2-mi-1hkv2ngyzjxo6x3" target="_blank" rel="noreferrer"><i class="fa fa-solid fa-link "></i> Precio por M2</a>
             <a class="faq-link" href="https://infogram.com/010-precio-del-m2-mi-1hkv2ngyzjxo6x3" target="_blank" rel="noreferrer"><i class="fa fa-solid fa-link "></i> Precio por M2 por barrio</a>
+            <div>
+                <h3>¿Querés alquilar?</h3>
+                <a (click)="goToContact()" class="faq-link bg-white">Contactanos</a>
+            </div>
         </div>
 
         <i (click)="scrollToNext()" class="arrow-button fa fa-solid fa-arrow-down"></i>

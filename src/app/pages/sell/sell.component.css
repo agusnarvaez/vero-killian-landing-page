@@ -81,6 +81,20 @@ main::after{
 .sell-info .links h2{
     margin-bottom: 1rem;
 }
+.sell-info .links > div{
+    margin-top: 3rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.sell-info .links > div h3{
+    font-weight: 500;
+    font-size: 2.0rem;
+}
+.sell-info .links > div .faq-link{
+    width: fit-content;
+    padding: 1rem 2.5rem;
+}
 .sell-info .faq-link{
     border-radius: 3rem;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%), rgba(255, 255, 255, 0.30);
@@ -176,7 +190,12 @@ main form .btn-double *{
 
 
 @media (min-width: 530px) {
-    .sell-info{
+    main .sell-info{
+        height: 80vh;
+        padding: 3% 0;
+    }
+    main .sell-banner,
+    main::after{
         height: 85vh;
     }
     .sell-info h2{
@@ -219,6 +238,9 @@ main form .btn-double *{
     main form .btn-double span:first-child{
         padding: 0 10%;
     }
+    main .sell-banner{
+        height: 85vh;
+    }
 }
 
 @media (min-width: 950px) {
@@ -260,6 +282,9 @@ main form .btn-double *{
     main form .btn-double{
         margin-top: 1rem;
         width: 60%;
+    }
+    .sell-info .links > div h3{
+        font-size: 2.7rem;
     }
 
 
