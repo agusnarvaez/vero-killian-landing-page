@@ -72,6 +72,8 @@ export class FiltersService {
       currency: 'ANY',
       filters: [],
     }
+    let order_by: string | number | true = ''
+    let order: string | number | true = ''
 
     if (this._filters['operation_type'] == 'Venta')
       base_query.operation_types = [1]
@@ -87,7 +89,10 @@ export class FiltersService {
     if (this._filters['maxPrice'])
       base_query.price_to = Number(this._filters['maxPrice'])
 
-    return JSON.stringify(base_query)
+    if (this._filters['order_by']) order_by = this._filters['order_by']
+    if (this._filters['order']) order = this._filters['order']
+
+    return `data=${JSON.stringify(base_query)}&order_by=${order_by}&order=${order}`
   }
 
   add(filterObj: FilterObject): void {
