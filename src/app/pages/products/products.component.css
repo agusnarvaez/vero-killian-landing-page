@@ -62,4 +62,7 @@ app-products-card{
     main .banner{
         margin-bottom: 5%;
     }
+    app-products-card{
+        height: 50vh;
+    }
 }
