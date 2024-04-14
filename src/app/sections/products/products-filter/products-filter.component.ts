@@ -31,12 +31,14 @@ export class ProductsFilterComponent {
     // Inicializar el estado de los filtros
   }
   clearFilters(): void {
+    console.log('reset')
     this.myForm.reset()
     this.filtersService.clear()
     this.filterChange.emit()
   }
-  onSubmit(): void {
+  search(): void {
     // Lógica para enviar los filtros al servidor
+    console.log('filter')
     this.showFilters = false
     if (this.myForm.value.type != '')
       this.filtersService.add({ name: 'type', value: this.myForm.value.type })

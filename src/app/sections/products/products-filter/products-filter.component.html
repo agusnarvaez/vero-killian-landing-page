@@ -1,6 +1,6 @@
 <form
     class="filter-form" [ngClass]="{'showFilters': showFilters}"
-    #myForm="ngForm" (ngSubmit)="onSubmit()">
+    #myForm="ngForm" (ngSubmit)="search()">
     <div class="input-container">
         <label for="filter-neighborhood">Ciudad o barrio </label>
         <input
@@ -24,7 +24,7 @@
             class="reset-btn">
             <i class="fa fa-solid fa-arrow-rotate-right"></i>
         </button>
-        <button type="submit" class="search-btn fa fa-search fa-solid fa-magnifying-glass"></button>
+        <button (click)="search()" type="submit" class="search-btn fa fa-search fa-solid fa-magnifying-glass"></button>
     </div>
     <div class="input-container">
         <label for="typeFilter">Tipo</label>

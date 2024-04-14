@@ -46,6 +46,7 @@
     font-family: Poppins, sans-serif;
     transition: all 0.3s ease-in-out;
     text-wrap:pretty;
+
 }
 .filter-form .main-buttons{
     width: 100%;
@@ -67,6 +68,7 @@
     border: 1px solid var(--primary-color);
     border-radius: 0.5rem;
     aspect-ratio: 1/1;
+    cursor: pointer;
 }
 .filter-form .reset-btn{
     background-color: var(--light-color);
