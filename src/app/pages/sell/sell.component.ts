@@ -97,6 +97,12 @@ export class SellComponent {
       name: 'twitter:url',
       content: 'https://www.veritokillian.ar/vender',
     })
+
+    const top = document.getElementById('sell-top')
+    top?.scrollIntoView({
+      behavior: 'auto',
+      block: 'start',
+    })
   }
   scrollToNext() {
     const element = document.getElementById('sellForm')

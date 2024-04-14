@@ -22,4 +22,12 @@ import { HomeAdvicesComponent } from '../../sections/home/home-advices/home-advi
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  ngOnInit() {
+    const top = document.getElementById('home-top')
+    top?.scrollIntoView({
+      behavior: 'auto',
+      block: 'start',
+    })
+  }
+}

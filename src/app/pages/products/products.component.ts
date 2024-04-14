@@ -105,5 +105,11 @@ export class ProductsComponent {
       name: 'twitter:url',
       content: 'https://www.veritokillian.ar/catalogo',
     })
+
+    const top = document.getElementById('products-top')
+    top?.scrollIntoView({
+      behavior: 'auto',
+      block: 'start',
+    })
   }
 }

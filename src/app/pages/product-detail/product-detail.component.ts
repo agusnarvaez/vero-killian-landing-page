@@ -81,6 +81,11 @@ export class ProductDetailComponent {
         })
       })
     })
+    const top = document.getElementById('product-detail-top')
+    top?.scrollIntoView({
+      behavior: 'auto',
+      block: 'start',
+    })
   }
   copyActualRoute() {
     const url = 'www.veritokillian.ar/catalogo/' + this.product?.id
