@@ -88,4 +88,34 @@
             </div>
     </div>
 
+    <div class="input-container order_by">
+        <label for="order_by">Ordenar por</label>
+        <select
+            id="order_by"
+            name="order_by"
+            [(ngModel)]="order_by"
+        >
+            <option value="" disabled selected>Ordenar por</option>
+            <option value="price">Precio</option>
+            <option value="location">Ubicación</option>
+            <option value="age">Año</option>
+            <option value="age">Expenses</option>
+            <option value="room_amount">Habitaciones</option>
+            <option value="bathroom_amount">Baños</option>
+            <option value="parking_lot_amount">Cocheras</option>
+            <option value="surface">Superficie</option>
+            <option value="roofed_surface">Superficie Cubierta</option>
+            <option value="total_surface">Superficie Total</option>
+        </select>
+        <select
+            id="order"
+            name="order"
+            [(ngModel)]="order"
+        >
+            <option value="" disabled selected>---</option>
+            <option value="ASC">Ascendente</option>
+            <option value="DESC">Descendente</option>
+        </select>
+    </div>
+
 </form>

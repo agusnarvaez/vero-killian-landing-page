@@ -60,7 +60,7 @@ app-products-card{
 @media (min-width: 950px) {
 
     main .banner{
-        margin-bottom: 5%;
+        margin-bottom: 8%;
     }
     app-products-card{
         height: 50vh;
