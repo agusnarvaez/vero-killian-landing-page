@@ -20,7 +20,7 @@ export class HomeFaqComponent {
     {
       question: '¿Que necesito para tasar mi propiedad?',
       answer:
-        '<ul><li>Necesitas tener tu título de propiedad. No tengo el título, escribime y te asesoro. Del título el matriculado va a obtener la cantidad de m2 exactos para realizar una buena tasación y asesorarte en la lectura del mismo para confirmar cuantos titulares son y si se necesita otra documentación respaldatoria para poder vender.</li> <br><li>El matriculado necesita acercarse a la propiedad y conocerla.</li></ul>',
+        "<ul><li>Necesitas tener tu título de propiedad. No tengo el título, <a href='vender'>escribime</a> y te asesoro. Del título el matriculado va a obtener la cantidad de m2 exactos para realizar una buena tasación y asesorarte en la lectura del mismo para confirmar cuantos titulares son y si se necesita otra documentación respaldatoria para poder vender.</li> <br><li>El matriculado necesita acercarse a la propiedad y conocerla.</li></ul>",
     },
     {
       question: '¿Que necesito para publicar una propiedad?',
