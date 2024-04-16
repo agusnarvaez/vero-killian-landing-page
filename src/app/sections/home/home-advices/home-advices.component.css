@@ -94,10 +94,19 @@
 .home-advices article .card-back h3{
     font-size: 2rem;
 }
+.home-advices article .card-back .card-paragraph{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
 .home-advices article .card-back p{
     font-size: 1.2rem;
     text-align: start;
     width: 100%;
+}
+.home-advices article .card-back p a{
+    color: var(--light-color);
 }
 
 .home-advices article .card-back .btn-double{
@@ -138,6 +147,7 @@
     }
     .home-advices article{
         width: 48%;
+        height: 80vh;
     }
 
     .home-advices article h3{
@@ -146,11 +156,11 @@
     .home-advices article p{
         font-size: 1.7rem;
     }
+    .home-advices article p br{
+        margin-bottom: 1rem;
+    }
     .home-advices article .card-back{
         overflow-y: scroll;
-    }
-    .home-advices article .card-back {
-        gap: 2rem;
     }
 
 }
@@ -158,6 +168,9 @@
 @media (min-width: 930px) {
     .home-advices h2{
         font-size: 3rem;
+    }
+    .home-advices article{
+        height: 65vh;
     }
     .home-advices article h3{
         font-size: 3rem;
