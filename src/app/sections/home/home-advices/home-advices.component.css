@@ -196,6 +196,9 @@
 }
 
 @media (min-width: 1110px) {
+    .home-advices article{
+        height: 75vh;
+    }
     .home-advices h2{
         font-size: 4rem;
         line-height: 4.5rem;
