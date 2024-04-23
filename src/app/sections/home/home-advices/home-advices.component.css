@@ -12,7 +12,7 @@
 
 .home-advices article{
     width: 100%;
-    height: 70vh;
+    height: 75vh;
     perspective: 1000px; /* Crea la perspectiva 3D */
     color: var(--light-color);
 }
