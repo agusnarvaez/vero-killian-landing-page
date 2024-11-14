@@ -17,7 +17,7 @@
                 <h4>{{product?.operation_type}} {{product?.type}} en la zona de {{product?.address?.city}}</h4>
             </main>
             <footer>
-                <h2 class="price"><span class="bold">{{product?.currency}} {{product?.price}}</span></h2>
+                <h2 class="price"><span class="bold">{{product?.currency}} {{product?.price | number:'1.2-2'}}</span></h2>
                 <button
                     routerLink="/catalogo/{{product?.id}}"
                     class="product-card-icon-button">
