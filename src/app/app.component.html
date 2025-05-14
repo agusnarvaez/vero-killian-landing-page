@@ -1,5 +1,9 @@
 <app-header></app-header>
     <router-outlet></router-outlet>
+    <main *ngIf="isLoading()" class="loading">
+        <h2>Cargando...</h2>
+        <span class="loader"></span>
+    </main>
     <a
     class="whatsapp-icon fa fa-brands fa-whatsapp"
     href="https://wa.me/5491160037967?text=Hola%20Vero%21%20Quiero%20saber%20mas%20acerca%20de%20tus%20servicios%20inmobiliarios" target="_blank" rel="noreferrer"></a>

@@ -6,6 +6,7 @@ import { ProductsFilterComponent } from '../../sections/products/products-filter
 import { ProductsCardComponent } from '../../sections/products/products-card/products-card.component'
 import { Product } from '../../models/product'
 import { Meta, Title } from '@angular/platform-browser'
+import { LoaderService } from '../../loader.service'
 
 @Component({
   selector: 'app-products',
@@ -26,6 +27,7 @@ export class ProductsComponent {
     private productService: ProductService,
     private metaTagService: Meta,
     private titleService: Title,
+    private loaderService: LoaderService,
   ) {}
 
   onFilterChange() {
@@ -36,12 +38,16 @@ export class ProductsComponent {
 
   updateProductsList() {
     // Lógica para filtrar la lista basada en `this.selectedFilters`
+    this.loaderService.showLoading()
     this.productService.getAll().subscribe({
       next: (products) => {
         this.list = products
       },
       error: (err) => {
         console.error(err)
+      },
+      complete: () => {
+        this.loaderService.hideLoading()
       },
     })
   }

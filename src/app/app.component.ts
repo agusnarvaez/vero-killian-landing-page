@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 import { RouterOutlet } from '@angular/router'
 import { HeaderComponent } from "./components/header/header.component"
 import { FooterComponent } from "./components/footer/footer.component"
+import { LoaderService } from './loader.service'
 
 
 @Component({
@@ -13,6 +14,12 @@ import { FooterComponent } from "./components/footer/footer.component"
     imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent]
 })
 export class AppComponent {
+  constructor(
+    private loaderService: LoaderService,
+  ) {}
   show = false
   title = 'vero-killian-landing-page'
+
+  isLoading = () => this.loaderService.loading
+
 }

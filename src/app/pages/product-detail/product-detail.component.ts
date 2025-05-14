@@ -10,6 +10,7 @@ import { Product } from '../../models/product'
 import { ActivatedRoute } from '@angular/router'
 import { ContactFormComponent } from '../../sections/contact/contact-form/contact-form.component'
 import { Meta, Title } from '@angular/platform-browser'
+import { LoaderService } from '../../loader.service'
 
 @Component({
   selector: 'app-product-detail',
@@ -29,17 +30,24 @@ import { Meta, Title } from '@angular/platform-browser'
 export class ProductDetailComponent {
   product: Product | undefined
   showNotification = false
+  showLoading = true
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
     private metaTagService: Meta,
     private titleService: Title,
+    private loaderService: LoaderService,
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
+      this.loaderService.showLoading()
       this.productService.getById(params['id']).subscribe((product) => {
         this.product = product
+        if (this.product){
+          this.loaderService.hideLoading()
+        }
+        //this.loaderService.hideLoading()
         this.titleService.setTitle(
           `${this.product?.operation_type} ${this.product?.type} en ${this.product?.address.city} - Verónica Killian Inmobiliaria`,
         )
@@ -50,8 +58,7 @@ export class ProductDetailComponent {
         this.metaTagService.updateTag({
           name: 'keywords',
           content:
-            ' Propiedad, inmueble, bien raíz, bienes raíces, inmobiliaria, Verónica Killian, ' +
-              this.product?.address ?? '',
+            ' Propiedad, inmueble, bien raíz, bienes raíces, inmobiliaria, Verónica Killian' + (this.product?.address ? `, ${this.product?.address.city}` : ''),
         })
 
         this.metaTagService.updateTag({
@@ -87,6 +94,7 @@ export class ProductDetailComponent {
       block: 'start',
     })
   }
+
   copyActualRoute() {
     const url = 'www.veritokillian.ar/catalogo/' + this.product?.id
     navigator.clipboard.writeText(url)
