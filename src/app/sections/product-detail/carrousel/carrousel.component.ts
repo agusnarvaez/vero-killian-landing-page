@@ -22,7 +22,7 @@ export class CarrouselComponent {
   getYoutubeVideoId = (url: string) => {
     const regex = /(?:v=|shorts\/|be\/)([^&?/]+)/
     const match = url.match(regex)
-    return match ? match[1] : null
+    return match ? match[1] : ''
   }
 
   //* Esta variable se usa para saber qué imagen se está mostrando actualmente
