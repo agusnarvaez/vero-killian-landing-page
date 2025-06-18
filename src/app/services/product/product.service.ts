@@ -29,11 +29,11 @@ export class ProductService {
 
   getAll(): Observable<Product[]> {
     return forkJoin({
-      tokko: this.getAllFromTokko(),
+      /* tokko: this.getAllFromTokko(), */
       sanity: this.getAllFromSanity(),
     }).pipe(
       // Si quieres combinar los resultados de Tokko y Sanity, puedes hacerlo aquí
-      map((results) => [...results.tokko, ...results.sanity]),
+      map((results) => [/* ...results.tokko, */ ...results.sanity]),
       catchError((error) => {
         // Manejar el error
         return throwError(() => new Error(error.message))

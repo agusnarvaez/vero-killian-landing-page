@@ -18,44 +18,40 @@ export class FiltersService {
   get = (): Filters => this._filters
 
   getSanityQuery(): string {
-    const baseQuery = '*[_type == "property"'
-    const filterQuery = Object.keys(this._filters)
-      .map((key) => {
-        const value = this._filters[key]
-        if (typeof value === 'boolean' && value) {
-          return ` && ${key} == true`
-        } else if (typeof value === 'string') {
-          if (value == 'Venta' || value == 'Alquiler') {
-            return ` && operation_type->title == "${value}"`
-          }
-          return ` && ${key} == "${value}"`
-        }
-        return ''
-      })
-      .join('')
+    const whereClauses: string[] = ['_type == "property"']
 
-    return `${baseQuery}${filterQuery}]{
-      ...,
-      operation_type->{
-          title
-      },
-      currency->{
-          title
-      },
-      type->{
-          title
-      },
-      images[]{
-          asset->{
-              path, url
-          }
-      },
-      cover{
-          asset->{
-              path, url
+    Object.entries(this._filters).forEach(([key, value]) => {
+      switch (key) {
+        // …tus otros casos (operation_type, type, rooms, minPrice, maxPrice)
+
+        case 'neighborhood':
+          // en lugar de filtrar un campo que no existe,
+          // buscamos en city o en street (puedes añadir más rutas si tu schema lo tiene)
+          whereClauses.push(
+            `((city match "*${value}*") || (street match "*${value}*"))`,
+          )
+          break
+
+        default:
+          if (typeof value === 'string') {
+            whereClauses.push(`${key} == "${value}"`)
           }
       }
+    })
+
+    const filterExpr = whereClauses.map((w) => `(${w})`).join(' && ')
+    const projection = `{
+      ...,
+      room_amount,
+      operation_type->{title},
+      currency->{title},
+      type->{title},
+      images[]{ asset->{path, url} },
+      cover{   asset->{path, url} }
     }`
+
+    console.log('Sanity query 👉', `* [ ${filterExpr} ] ${projection}`)
+    return `* [ ${filterExpr} ] ${projection}`
   }
 
   getTokkoQuery(): string {
@@ -92,7 +88,9 @@ export class FiltersService {
     if (this._filters['order_by']) order_by = this._filters['order_by']
     if (this._filters['order']) order = this._filters['order']
 
-    return `data=${JSON.stringify(base_query)}&order_by=${order_by}&order=${order}`
+    return `data=${JSON.stringify(
+      base_query,
+    )}&order_by=${order_by}&order=${order}`
   }
 
   add(filterObj: FilterObject): void {

@@ -17,7 +17,7 @@ export class ProductsFilterComponent {
   rooms: number = 0
   neighborhood: string = ''
   minPrice: number = 0
-  maxPrice: number = Infinity
+  maxPrice: number = 0
   order_by: string = ''
   order: string = ''
 
@@ -30,11 +30,13 @@ export class ProductsFilterComponent {
   constructor(private filtersService: FiltersService) {
     // Inicializar el estado de los filtros
   }
+
   clearFilters(): void {
     this.myForm.reset()
     this.filtersService.clear()
     this.filterChange.emit()
   }
+
   search(): void {
     // Lógica para enviar los filtros al servidor
     this.showFilters = false
@@ -42,17 +44,18 @@ export class ProductsFilterComponent {
       this.filtersService.add({ name: 'type', value: this.myForm.value.type })
     if (this.myForm.value.rooms > 0)
       this.filtersService.add({ name: 'rooms', value: this.myForm.value.rooms })
-    if (this.myForm.value.neighborhood != '')
+    if (this.neighborhood?.trim() !== '') {
       this.filtersService.add({
         name: 'neighborhood',
-        value: this.myForm.value.neighborhood,
+        value: this.neighborhood?.trim(),
       })
+    }
     if (this.myForm.value.minPrice > 0)
       this.filtersService.add({
         name: 'minPrice',
         value: this.myForm.value.minPrice,
       })
-    if (this.myForm.value.maxPrice > 0)
+    if (isFinite(this.maxPrice) && this.myForm.value.maxPrice > 0)
       this.filtersService.add({
         name: 'maxPrice',
         value: this.myForm.value.maxPrice,

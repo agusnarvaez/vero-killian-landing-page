@@ -103,6 +103,7 @@ export interface TokkoProduct {
 export interface SanityProduct {
   area: number
   bathRooms: number
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body: any[]
   city: string
   cover: {
