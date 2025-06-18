@@ -21,8 +21,8 @@ export class MainInfoComponent {
 
   ngOnChanges(): void {
     if (this.product) {
-      const lat = parseFloat(this.product.geo_lat.toString())
-      const lng = parseFloat(this.product.geo_long.toString())
+      const lat = parseFloat(this.product.geo_lat?.toString())
+      const lng = parseFloat(this.product.geo_long?.toString())
 
       this.center = { lat: lat, lng: lng }
       this.marker.position = this.center
