@@ -44,7 +44,7 @@ export class ProductDetailComponent {
       this.loaderService.showLoading()
       this.productService.getById(params['id']).subscribe((product) => {
         this.product = product
-        if (this.product){
+        if (this.product) {
           this.loaderService.hideLoading()
         }
         //this.loaderService.hideLoading()
@@ -58,7 +58,8 @@ export class ProductDetailComponent {
         this.metaTagService.updateTag({
           name: 'keywords',
           content:
-            ' Propiedad, inmueble, bien raíz, bienes raíces, inmobiliaria, Verónica Killian' + (this.product?.address ? `, ${this.product?.address.city}` : ''),
+            ' Propiedad, inmueble, bien raíz, bienes raíces, inmobiliaria, Verónica Killian' +
+            (this.product?.address ? `, ${this.product?.address.city}` : ''),
         })
 
         this.metaTagService.updateTag({

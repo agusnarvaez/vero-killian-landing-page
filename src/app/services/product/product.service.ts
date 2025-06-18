@@ -84,7 +84,7 @@ export class ProductService {
 
   getById(id: string): Observable<Product> {
     if (id.length > 10) {
-      this.getSanityProductById(id)
+      return this.getSanityProductById(id)
     }
     return this.getTokkoProductById(id)
   }
@@ -108,29 +108,19 @@ export class ProductService {
   private getSanityProductById(id: string): Observable<Product> {
     const query = `*[_id=="${id}"]{
       ...,
-      operation_type->{
-          title
-      },
-      currency->{
-          title
-      },
-      type->{
-          title
-      },
-      images[]{
-          asset->{
-              path, url
-          }
-      },
-      cover{
-          asset->{
-              path, url
-          }
-      }
+      rooms,
+      bathRooms,
+      operation_type->{title},
+      currency->{title},
+      type->{title},
+      images[]{ asset->{ path, url } },
+      cover{ asset->{ path, url } }
     }`
+    const encodedQuery = encodeURIComponent(query)
+
     return this.http
       .get<SanityResponse>(
-        `https://${environment.sanityKey}.api.sanity.io/v2022-03-07/data/query/production?query=${query}`,
+        `https://${environment.sanityKey}.api.sanity.io/v2025-06-18/data/query/production?query=${encodedQuery}`,
       )
       .pipe(
         catchError((error) => {
@@ -138,7 +128,6 @@ export class ProductService {
         }),
         map((response) => {
           // Aquí puedes hacer alguna transformación de los datos si es necesario.
-          /* console.log(response.result[0]) */
           return new Product().fromSanity(response.result[0])
         }),
       )

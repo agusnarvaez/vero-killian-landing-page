@@ -55,8 +55,8 @@ export class Product {
     this.cover = product.cover.asset.url
     this.operation_type = product.operation_type.title
     this.title = product.title
-    this.geo_lat = product.geo_lat
-    this.geo_long = product.geo_long
+    this.geo_lat = product.location.lat
+    this.geo_long = product.location.lng
     this.garage = product.garage
     this.description = product.body[0].children[0].text
     this.images = product.images.map((image) => image.asset.url)
@@ -116,8 +116,10 @@ export interface SanityProduct {
     title: string
   }
   garage: number
-  geo_lat: number
-  geo_long: number
+  location: {
+    lat: number
+    lng: number
+  }
   images: {
     asset: {
       path: string
