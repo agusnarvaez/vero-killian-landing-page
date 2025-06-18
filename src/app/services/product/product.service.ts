@@ -30,10 +30,10 @@ export class ProductService {
   getAll(): Observable<Product[]> {
     return forkJoin({
       tokko: this.getAllFromTokko(),
+      sanity: this.getAllFromSanity(),
     }).pipe(
-      map((results) => {
-        return results.tokko
-      }),
+      // Si quieres combinar los resultados de Tokko y Sanity, puedes hacerlo aquí
+      map((results) => [...results.tokko, ...results.sanity]),
       catchError((error) => {
         // Manejar el error
         return throwError(() => new Error(error.message))
@@ -67,7 +67,7 @@ export class ProductService {
     )
     return this.http
       .get<SanityResponse>(
-        `https://${environment.sanityKey}.api.sanity.io/v2022-03-07/data/query/production?query=${encodedQuery}`,
+        `https://${environment.sanityKey}.api.sanity.io/v2025-06-18/data/query/production?query=${encodedQuery}`,
       )
       .pipe(
         catchError((error) => {
