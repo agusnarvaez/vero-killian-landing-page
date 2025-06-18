@@ -117,10 +117,10 @@ export class SellComponent {
   sendMail = async (mailToSend: Mail) => {
     this.emailService.sendEmail(mailToSend).subscribe({
       next: (response) => {
-        console.log(response)
+        console.info(response)
       },
       error: (error) => {
-        console.log(error)
+        console.error(error)
       },
     })
   }

@@ -103,7 +103,6 @@ export class CarrouselComponent {
     const safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       'https://www.youtube.com/embed/' + id,
     )
-    console.log(safeUrl)
     return safeUrl
   }
 
