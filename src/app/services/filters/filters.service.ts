@@ -18,40 +18,56 @@ export class FiltersService {
   get = (): Filters => this._filters
 
   getSanityQuery(): string {
+    const f = this._filters
     const whereClauses: string[] = ['_type == "property"']
 
-    Object.entries(this._filters).forEach(([key, value]) => {
-      switch (key) {
-        // …tus otros casos (operation_type, type, rooms, minPrice, maxPrice)
+    // FILTROS
+    if (f['operation_type'])
+      whereClauses.push(`operation_type->title == "${f['operation_type']}"`)
 
-        case 'neighborhood':
-          // en lugar de filtrar un campo que no existe,
-          // buscamos en city o en street (puedes añadir más rutas si tu schema lo tiene)
-          whereClauses.push(
-            `((city match "*${value}*") || (street match "*${value}*"))`,
-          )
-          break
+    if (f['type']) whereClauses.push(`type->title == "${f['type']}"`)
 
-        default:
-          if (typeof value === 'string') {
-            whereClauses.push(`${key} == "${value}"`)
-          }
-      }
-    })
+    if (typeof f['rooms'] === 'number')
+      whereClauses.push(`rooms >= ${f['rooms']}`)
 
-    const filterExpr = whereClauses.map((w) => `(${w})`).join(' && ')
+    if (typeof f['minPrice'] === 'number')
+      whereClauses.push(`price >= ${f['minPrice']}`)
+
+    if (typeof f['maxPrice'] === 'number')
+      whereClauses.push(`price <= ${f['maxPrice']}`)
+
+    if (typeof f['neighborhood'] === 'string')
+      whereClauses.push(
+        `(city match "*${f['neighborhood']}*" || street match "*${f['neighborhood']}*")`,
+      )
+
+    // construyo el WHERE
+    const filterExpr = whereClauses.map((cl) => `(${cl})`).join(' && ')
+
+    // ORDENAMIENTO
+    let orderClause = ''
+    if (f['order_by'] && f['order']) {
+      const dir = (f['order'] as string).toLowerCase() // "asc" o "desc"
+      orderClause = ` | order(${f['order_by']} ${dir})`
+    }
+    console.log('Sanity ORDER ➡', orderClause)
+
+    // PROYECCIÓN
     const projection = `{
-      ...,
-      room_amount,
-      operation_type->{title},
-      currency->{title},
-      type->{title},
-      images[]{ asset->{path, url} },
-      cover{   asset->{path, url} }
-    }`
+    ...,
+    rooms,
+    bathRooms,
+    parking_lot_amount,
+    operation_type->{title},
+    currency->{title},
+    type->{title},
+    images[]{asset->{path, url}},
+    cover{asset->{path, url}}
+  }`
 
-    console.log('Sanity query 👉', `* [ ${filterExpr} ] ${projection}`)
-    return `* [ ${filterExpr} ] ${projection}`
+    const groq = `*[ ${filterExpr} ]${orderClause} ${projection}`
+    console.log('Sanity GROQ ➡', groq)
+    return groq
   }
 
   getTokkoQuery(): string {
