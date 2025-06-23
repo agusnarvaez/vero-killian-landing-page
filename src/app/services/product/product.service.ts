@@ -4,6 +4,7 @@ import { Observable, catchError, forkJoin, map, throwError } from 'rxjs'
 import { Product, SanityProduct, TokkoProduct } from '../../models/product'
 import { HttpClient } from '@angular/common/http'
 import { environment } from '../../../../enviroment.prod'
+import { DomSanitizer } from '@angular/platform-browser'
 
 interface TokkoResponse {
   objects: TokkoProduct[]
@@ -21,6 +22,7 @@ export class ProductService {
   constructor(
     filters: FiltersService,
     private http: HttpClient,
+    private sanitizer: DomSanitizer,
   ) {
     this.filtersService = filters
   }
@@ -76,7 +78,7 @@ export class ProductService {
         map((response) => {
           // Aquí puedes hacer alguna transformación de los datos si es necesario.
           return response.result.map((p) => {
-            return new Product().fromSanity(p)
+            return new Product(this.sanitizer).fromSanity(p)
           })
         }),
       )
@@ -128,7 +130,7 @@ export class ProductService {
         }),
         map((response) => {
           // Aquí puedes hacer alguna transformación de los datos si es necesario.
-          return new Product().fromSanity(response.result[0])
+          return new Product(this.sanitizer).fromSanity(response.result[0])
         }),
       )
   }

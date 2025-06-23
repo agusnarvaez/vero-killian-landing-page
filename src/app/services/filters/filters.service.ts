@@ -50,7 +50,6 @@ export class FiltersService {
       const dir = (f['order'] as string).toLowerCase() // "asc" o "desc"
       orderClause = ` | order(${f['order_by']} ${dir})`
     }
-    console.log('Sanity ORDER ➡', orderClause)
 
     // PROYECCIÓN
     const projection = `{
@@ -66,7 +65,6 @@ export class FiltersService {
   }`
 
     const groq = `*[ ${filterExpr} ]${orderClause} ${projection}`
-    console.log('Sanity GROQ ➡', groq)
     return groq
   }
 

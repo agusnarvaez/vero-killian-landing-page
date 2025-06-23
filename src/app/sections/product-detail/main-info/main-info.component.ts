@@ -27,7 +27,6 @@ export class MainInfoComponent {
       this.center = { lat: lat, lng: lng }
       this.marker.position = this.center
     }
-    console.log(this.product)
   }
 
   ngOnInit(): void {

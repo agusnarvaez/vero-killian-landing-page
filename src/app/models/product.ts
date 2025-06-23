@@ -1,4 +1,6 @@
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 import { Address } from './address'
+import { toHTML } from '@portabletext/to-html'
 
 export class Product {
   id: string = ''
@@ -15,10 +17,13 @@ export class Product {
   title: string = ''
   garage: number = 0
   description: string = ''
+  sanity_description_html?: SafeHtml
   geo_lat: number = 0
   geo_long: number = 0
   images: string[] = []
   videos: string[] = []
+
+  constructor(private sanitizer?: DomSanitizer) {}
 
   fromTokko(product: TokkoProduct) {
     this.id = product.id
@@ -45,8 +50,8 @@ export class Product {
   fromSanity(product: SanityProduct) {
     this.id = product._id
     this.type = product.type.title
-    ;(this.address = new Address(product.street, product.city)),
-      (this.price = product.price)
+    this.address = new Address(product.street, product.city)
+    this.price = product.price
     this.currency = product.currency.title
     this.area = product.area
     this.coveredArea = product.coveredArea
@@ -58,8 +63,12 @@ export class Product {
     this.geo_lat = product.location.lat
     this.geo_long = product.location.lng
     this.garage = product.garage
-    this.description = product.body[0].children[0].text
     this.images = product.images.map((image) => image.asset.url)
+    if (product.body && this.sanitizer) {
+      const html = toHTML(product.body)
+      this.sanity_description_html =
+        this.sanitizer.bypassSecurityTrustHtml(html)
+    }
 
     return this
   }

@@ -16,14 +16,15 @@
             <li><i class="fa fa-solid fa-bath"></i>{{product?.bathrooms}} Baño</li>
         </ul>
     </section>
-    @if (
-        product?.description
-    ) {
-        <section class="description-wrapper">
-            <h2>Descripción</h2>
-            <p class="description" [innerHTML]="product?.description"></p>
-        </section>
-    }
+
+    <section *ngIf="product?.description" class="description-wrapper">
+        <h2>Descripción</h2>
+        <p class="description" [innerHTML]="product?.description"></p>
+    </section>
+    <section *ngIf="product?.sanity_description_html" class="description-wrapper">
+        <h2>Descripción</h2>
+        <p class="description" [innerHTML]="product?.sanity_description_html" ></p>
+    </section>
     <section class="location-wrapper">
         <h2>Ubicación</h2>
         <div class="product-map" *ngIf="product">
