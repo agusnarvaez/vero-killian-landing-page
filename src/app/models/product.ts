@@ -42,8 +42,8 @@ export class Product {
     this.geo_long = product.geo_long
     this.garage = product.parking_lot_amount
     this.description = product.description_only ?? product.rich_description
-    this.images = product.photos.map((photo) => photo.image)
-    this.videos = product.videos.map((video) => video.url)
+    this.images = product.photos?.map((photo) => photo.image)
+    this.videos = product.videos?.map((video) => video.url)
     return this
   }
 
@@ -63,7 +63,7 @@ export class Product {
     this.geo_lat = product.location.lat
     this.geo_long = product.location.lng
     this.garage = product.garage
-    this.images = product.images.map((image) => image.asset.url)
+    this.images = product.images?.map((image) => image.asset.url)
     if (product.body && this.sanitizer) {
       const html = toHTML(product.body)
       this.sanity_description_html =
