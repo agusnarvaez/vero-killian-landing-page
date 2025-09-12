@@ -68,7 +68,7 @@ export class ProductsComponent {
 
   ngOnInit() {
     // Lógica para inicializar `this.list`
-    this.updateProductsList()
+    setTimeout(() => this.updateProductsList())
 
     this.titleService.setTitle(
       'Catálogo de Propiedades - Verónica Killian Inmobiliaria',
