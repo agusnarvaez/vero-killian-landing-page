@@ -69,7 +69,7 @@ export class ProductService {
     )
     return this.http
       .get<SanityResponse>(
-        `https://${environment.sanityKey}.api.sanity.io/v2025-06-18/data/query/production?query=${encodedQuery}`,
+        `https://${environment.sanityKey}.api.sanity.io/v2025-09-24/data/query/production?query=${encodedQuery}`,
       )
       .pipe(
         catchError((error) => {
@@ -122,7 +122,7 @@ export class ProductService {
 
     return this.http
       .get<SanityResponse>(
-        `https://${environment.sanityKey}.api.sanity.io/v2025-06-18/data/query/production?query=${encodedQuery}`,
+        `https://${environment.sanityKey}.api.sanity.io/v2025-09-24/data/query/production?query=${encodedQuery}`,
       )
       .pipe(
         catchError((error) => {
