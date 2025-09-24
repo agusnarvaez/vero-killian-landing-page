@@ -69,9 +69,7 @@
 .product-card section h2{
     font-weight: 600;
 }
-.product-card section h4{
 
-}
 .product-card section footer .price{
     width: 45%;
     font-size: 2.5rem;
@@ -180,6 +178,6 @@
 @media (min-width: 980px) {
     .product-card > a img{
         height: 100%;
-        
+
     }
 }

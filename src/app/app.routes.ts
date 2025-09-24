@@ -1,36 +1,50 @@
 import { Routes } from '@angular/router'
-import { HomeComponent } from './pages/home/home.component'
-import { ProductsComponent } from './pages/products/products.component'
-import { ProductDetailComponent } from './pages/product-detail/product-detail.component'
-import { ContactComponent } from './pages/contact/contact.component'
-import { NotFoundComponent } from './pages/not-found/not-found.component'
-import { SellComponent } from './pages/sell/sell.component'
-import { HomeFaqComponent } from './sections/home/home-faq/home-faq.component'
+
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'vender',
-    component: SellComponent,
+    loadComponent: () =>
+      import('./pages/sell/sell.component').then((m) => m.SellComponent),
   },
   {
     path: 'catalogo',
-    component: ProductsComponent,
+    loadComponent: () =>
+      import('./pages/products/products.component').then(
+        (m) => m.ProductsComponent,
+      ),
   },
   {
     path: 'catalogo/:id',
-    component: ProductDetailComponent,
+    loadComponent: () =>
+      import('./pages/product-detail/product-detail.component').then(
+        (m) => m.ProductDetailComponent,
+      ),
   },
   {
     path: 'contacto',
-    component: ContactComponent,
+    loadComponent: () =>
+      import('./pages/contact/contact.component').then(
+        (m) => m.ContactComponent,
+      ),
   },
   {
     path: 'preguntas-frecuentes',
-    component: HomeFaqComponent,
+    loadComponent: () =>
+      import('./sections/home/home-faq/home-faq.component').then(
+        (m) => m.HomeFaqComponent,
+      ),
   },
-  { path: 'notFound', component: NotFoundComponent },
+  {
+    path: 'notFound',
+    loadComponent: () =>
+      import('./pages/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent,
+      ),
+  },
   { path: '**', redirectTo: 'notFound' },
 ]

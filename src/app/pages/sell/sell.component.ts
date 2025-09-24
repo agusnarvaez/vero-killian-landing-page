@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { ButtonComponent } from '../../components/button/button.component'
 import { Meta, Title } from '@angular/platform-browser'
 import { EmailService } from '../../services/email/email.service'
 import { FormsModule, NgForm } from '@angular/forms'
@@ -10,7 +9,7 @@ import { Router, RouterModule } from '@angular/router'
 @Component({
   selector: 'app-sell',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './sell.component.html',
   styleUrl: './sell.component.css',
 })

@@ -1,7 +1,6 @@
 import { ProductService } from './../../services/product/product.service'
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { ProductsBannerComponent } from '../../sections/products/products-banner/products-banner.component'
 import { ProductsFilterComponent } from '../../sections/products/products-filter/products-filter.component'
 import { ProductsCardComponent } from '../../sections/products/products-card/products-card.component'
 import { Product } from '../../models/product'
@@ -13,7 +12,6 @@ import { LoaderService } from '../../loader.service'
   standalone: true,
   imports: [
     CommonModule,
-    ProductsBannerComponent,
     ProductsFilterComponent,
     ProductsCardComponent,
   ],

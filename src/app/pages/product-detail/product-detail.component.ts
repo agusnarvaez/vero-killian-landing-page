@@ -3,8 +3,6 @@ import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { CarrouselComponent } from '../../sections/product-detail/carrousel/carrousel.component'
 import { MainInfoComponent } from '../../sections/product-detail/main-info/main-info.component'
-import { ContactCardComponent } from '../../sections/product-detail/contact-card/contact-card.component'
-import { SuggestionsComponent } from '../../sections/product-detail/suggestions/suggestions.component'
 import { ProductService } from '../../services/product/product.service'
 import { Product } from '../../models/product'
 import { ActivatedRoute } from '@angular/router'
@@ -20,8 +18,6 @@ import { LoaderService } from '../../loader.service'
     ButtonComponent,
     CarrouselComponent,
     MainInfoComponent,
-    ContactCardComponent,
-    SuggestionsComponent,
     ContactFormComponent,
   ],
   templateUrl: './product-detail.component.html',

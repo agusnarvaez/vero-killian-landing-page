@@ -3,12 +3,24 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",   // o "node16" si preferís
+    "moduleDetection": "force",
+    "useDefineForClassFields": false
   },
   "files": [
     "src/main.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.mock.ts",
+    "src/test.ts",
+    "src/test-setup.ts",
+    "**/jest-setup.ts"
   ]
 }
