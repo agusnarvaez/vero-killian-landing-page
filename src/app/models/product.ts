@@ -69,6 +69,7 @@ export class Product {
       this.sanity_description_html =
         this.sanitizer.bypassSecurityTrustHtml(html)
     }
+    this.videos = product.videos
 
     return this
   }
@@ -147,4 +148,5 @@ export interface SanityProduct {
     title: string
   }
   _id: string
+  videos: string[]
 }
