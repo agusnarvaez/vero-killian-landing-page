@@ -57,7 +57,7 @@ export class Product {
     this.coveredArea = product.coveredArea
     this.rooms = product.rooms
     this.bathrooms = product.bathRooms
-    this.cover = product.cover.asset.url
+    this.cover = product.cover?.asset.url
     this.operation_type = product.operation_type?.title
     this.title = product.title
     this.geo_lat = product.location.lat
