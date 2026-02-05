@@ -60,8 +60,8 @@ export class Product {
     this.cover = product.cover?.asset.url
     this.operation_type = product.operation_type?.title
     this.title = product.title
-    this.geo_lat = product.location.lat
-    this.geo_long = product.location.lng
+    this.geo_lat = product.location?.lat
+    this.geo_long = product.location?.lng
     this.garage = product.garage
     this.images = product.images?.map((image) => image.asset.url)
     if (product.body && this.sanitizer) {
