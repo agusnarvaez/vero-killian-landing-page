@@ -1,0 +1,23 @@
+<div class="image-container">
+  <!-- Skeleton loader -->
+  <div class="skeleton" *ngIf="isLoading && !hasError">
+    <div class="skeleton-shimmer"></div>
+  </div>
+
+  <!-- Error fallback -->
+  <div class="error-fallback" *ngIf="hasError">
+    <i class="fa fa-solid fa-image"></i>
+    <span>Imagen no disponible</span>
+  </div>
+
+  <!-- Imagen real -->
+  <img
+    *ngIf="src && !hasError"
+    [src]="src"
+    [alt]="alt"
+    loading="lazy"
+    [class.loaded]="!isLoading"
+    (load)="onImageLoad()"
+    (error)="onImageError()"
+  />
+</div>
