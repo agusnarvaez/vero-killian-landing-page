@@ -51,17 +51,21 @@ export class FiltersService {
       orderClause = ` | order(${f['order_by']} ${dir})`
     }
 
-    // PROYECCIÓN
+    // PROYECCIÓN - Solo campos necesarios para las cards del listado
     const projection = `{
-    ...,
+    _id,
+    street,
+    city,
+    price,
+    area,
+    coveredArea,
     rooms,
     bathRooms,
-    parking_lot_amount,
+    garage,
     operation_type->{title},
     currency->{title},
     type->{title},
-    images[]{asset->{path, url}},
-    cover{asset->{path, url}}
+    cover{asset->{url}}
   }`
 
     const groq = `*[ ${filterExpr} ]${orderClause} ${projection}`
