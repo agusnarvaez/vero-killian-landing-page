@@ -10,11 +10,7 @@ import { LoaderService } from '../../loader.service'
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [
-    CommonModule,
-    ProductsFilterComponent,
-    ProductsCardComponent,
-  ],
+  imports: [CommonModule, ProductsFilterComponent, ProductsCardComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })
@@ -39,7 +35,8 @@ export class ProductsComponent {
     this.loaderService.showLoading()
     this.productService.getAll().subscribe({
       next: (products) => {
-        this.list = products
+        // Filtrar productos que no tienen imagen de cover
+        this.list = products.filter((product) => product.cover)
       },
       error: (err) => {
         console.error(err)
